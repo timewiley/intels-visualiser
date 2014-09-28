@@ -1,2 +1,3 @@
 intels-visualiser
 =================
+Project to visualise DMX lighting for Revue Intels...
