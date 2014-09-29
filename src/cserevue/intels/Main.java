@@ -2,7 +2,9 @@ package cserevue.intels;
 
 import com.jme3.app.SimpleApplication;
 import com.jme3.light.AmbientLight;
+import com.jme3.light.DirectionalLight;
 import com.jme3.math.ColorRGBA;
+import com.jme3.math.Vector3f;
 import com.jme3.renderer.RenderManager;
 import com.jme3.util.SkyFactory;
 import cserevue.intels.cameras.TheatreFlyCam;
@@ -51,7 +53,7 @@ public class Main extends SimpleApplication {
         theatre.addModel(rootNode, assetManager);
         
         // Setup bgcolour/skybox
-        viewPort.setBackgroundColor(ColorRGBA.DarkGray);
+        viewPort.setBackgroundColor(ColorRGBA.Blue);
         //rootNode.attachChild(SkyFactory.createSky(assetManager, "Textures/Sky/Bright/BrightSky.dds", false));
         //rootNode.attachChild(SkyFactory.createSky(assetManager, "Textures/Terrain/Rock2/rock.jpg", true));
     }
@@ -61,6 +63,11 @@ public class Main extends SimpleApplication {
         AmbientLight al = new AmbientLight();
         al.setColor(ColorRGBA.White.mult(1.0f));
         rootNode.addLight(al);
+        
+        DirectionalLight sun = new DirectionalLight();
+        sun.setColor(ColorRGBA.White);
+        sun.setDirection(new Vector3f(-.5f,-.5f,-.5f).normalizeLocal());
+        rootNode.addLight(sun);
     }
     
     protected void setupCameras() {
