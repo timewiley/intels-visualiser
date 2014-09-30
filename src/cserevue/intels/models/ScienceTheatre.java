@@ -18,11 +18,14 @@ import com.jme3.texture.Texture;
  */
 public class ScienceTheatre implements Model {
 
+    public final static float CURTAIN_WIDTH         = 0.05f;
     public final static float DRESS_CIRCLE_Y        = 8.0f;
     public final static float DRESS_CIRCLE_Z        = 25.0f;
-    public final static float FRONT_TO_FOHC         = 2.0f;
+    public final static float FRONT_TO_FOHC         = 3.0f;
+    public final static float FRONT_TO_HALF         = 6.0f;
+    public final static float FRONT_TO_QTR          = 4.5f;
     public final static float STAGE_FLOOR_HEIGHT    = 1.5f;
-    public final static float STAGE_DEPTH           = 8.0f;
+    public final static float STAGE_DEPTH           = 9.0f;
     public final static float STAGE_HEIGHT          = 6.0f;
     public final static float STAGE_WIDTH           = 16.0f;
     public final static float WALL_WIDTH            = 0.2f;
@@ -40,10 +43,11 @@ public class ScienceTheatre implements Model {
     // Models for the stage
     private void stage(Node rootNode, AssetManager assetManager) {
         // Common Materials
+        ColorRGBA blackColour = new ColorRGBA(0.1f, 0.1f, 0.1f, 1.0f);
         Material blackMat = new Material(assetManager, MAT_LIGHTING);
         blackMat.setBoolean("UseMaterialColors",true);
-        blackMat.setColor("Ambient", ColorRGBA.Black);
-        blackMat.setColor("Diffuse", ColorRGBA.Black);
+        blackMat.setColor("Ambient", blackColour);
+        blackMat.setColor("Diffuse", blackColour);
         
         Material greyMat = new Material(assetManager, MAT_LIGHTING);
         greyMat.setBoolean("UseMaterialColors",true);
@@ -58,7 +62,7 @@ public class ScienceTheatre implements Model {
         rootNode.attachChild(stageFloor);
         
         // Rear wall
-        Box rearWallBox = new Box( stageFloorBox.getXExtent(), (STAGE_HEIGHT + STAGE_FLOOR_HEIGHT) / 2, WALL_WIDTH / 2 );
+        Box rearWallBox = new Box( stageFloorBox.getXExtent() + (2 * WALL_WIDTH) / 2, (STAGE_HEIGHT + STAGE_FLOOR_HEIGHT) / 2, WALL_WIDTH / 2 );
         Geometry rearWall = new Geometry("StageRearWall", rearWallBox);
         rearWall.setLocalTranslation(0, rearWallBox.getYExtent(), -(rearWallBox.getZExtent() + stageFloorBox.getZExtent()) );
         rearWall.setMaterial(greyMat);
@@ -113,8 +117,19 @@ public class ScienceTheatre implements Model {
         fohcMat.setBoolean("UseMaterialColors", true);
         fohcMat.setColor("Ambient", fohcColour);
         fohcMat.setColor("Diffuse", fohcColour);
+        ColorRGBA qtrColour = ColorRGBA.Black;
+        Material qtrMat = new Material(assetManager, MAT_LIGHTING);
+        qtrMat.setBoolean("UseMaterialColors",true);
+        qtrMat.setColor("Ambient", qtrColour);
+        qtrMat.setColor("Diffuse", qtrColour);
+        ColorRGBA cycColour = ColorRGBA.White;
+        Material cycMat = new Material(assetManager, MAT_LIGHTING);
+        cycMat.setBoolean("UseMaterialColors",true);
+        cycMat.setColor("Ambient", cycColour);
+        cycMat.setColor("Diffuse", cycColour);
         
-        Box fohcBox = new Box( (WINGS_WIDTH + WALL_WIDTH) / 2, STAGE_HEIGHT / 2, WALL_WIDTH );
+        // FOHC
+        Box fohcBox = new Box( (WINGS_WIDTH + WALL_WIDTH) / 2, STAGE_HEIGHT / 2, CURTAIN_WIDTH );
         Geometry fohc1 = new Geometry("FOHC1", fohcBox);
         Geometry fohc2 = new Geometry("FOHC2", fohcBox);
         fohc1.setLocalTranslation(-(fohcBox.getXExtent() + STAGE_WIDTH / 2), STAGE_FLOOR_HEIGHT + fohcBox.getYExtent(), fohcBox.getZExtent() + STAGE_DEPTH / 2 - FRONT_TO_FOHC);
@@ -123,5 +138,41 @@ public class ScienceTheatre implements Model {
         fohc2.setMaterial(fohcMat);
         rootNode.attachChild(fohc1);
         rootNode.attachChild(fohc2);
+        
+        // QTR
+        Geometry qtr1 = new Geometry("QTR1", fohcBox);
+        Geometry qtr2 = new Geometry("QTR2", fohcBox);
+        qtr1.setLocalTranslation(-(fohcBox.getXExtent() + STAGE_WIDTH / 2), STAGE_FLOOR_HEIGHT + fohcBox.getYExtent(), fohcBox.getZExtent() + STAGE_DEPTH / 2 - FRONT_TO_QTR);
+        qtr2.setLocalTranslation(-qtr1.getLocalTranslation().x, qtr1.getLocalTranslation().y, qtr1.getLocalTranslation().z);
+        qtr1.setMaterial(qtrMat);
+        qtr2.setMaterial(qtrMat);
+        rootNode.attachChild(qtr1);
+        rootNode.attachChild(qtr2);
+        
+        // Half
+        Geometry half1 = new Geometry("Half1", fohcBox);
+        Geometry half2 = new Geometry("Half2", fohcBox);
+        half1.setLocalTranslation(-(fohcBox.getXExtent() + STAGE_WIDTH / 2), STAGE_FLOOR_HEIGHT + fohcBox.getYExtent(), fohcBox.getZExtent() + STAGE_DEPTH / 2 - FRONT_TO_HALF);
+        half2.setLocalTranslation(-half1.getLocalTranslation().x, half1.getLocalTranslation().y, half1.getLocalTranslation().z);
+        half1.setMaterial(qtrMat);
+        half2.setMaterial(qtrMat);
+        rootNode.attachChild(half1);
+        rootNode.attachChild(half2);
+        
+        // Traveller
+        Geometry traveller1 = new Geometry("Traveller1", fohcBox);
+        Geometry traveller2 = new Geometry("Traveller2", fohcBox);
+        traveller1.setLocalTranslation(-(fohcBox.getXExtent() + STAGE_WIDTH / 2), STAGE_FLOOR_HEIGHT + fohcBox.getYExtent(), fohcBox.getZExtent() - STAGE_DEPTH / 2);
+        traveller2.setLocalTranslation(-traveller1.getLocalTranslation().x, traveller1.getLocalTranslation().y, traveller1.getLocalTranslation().z);
+        traveller1.setMaterial(qtrMat);
+        traveller2.setMaterial(qtrMat);
+        rootNode.attachChild(traveller1);
+        rootNode.attachChild(traveller2);
+        // Cyc
+        Box cycBox = new Box( STAGE_WIDTH / 2, STAGE_HEIGHT / 2, CURTAIN_WIDTH );
+        Geometry cyc = new Geometry("Half", cycBox);
+        cyc.setLocalTranslation(0, cycBox.getYExtent() + STAGE_FLOOR_HEIGHT, cycBox.getZExtent() - STAGE_DEPTH / 2);
+        cyc.setMaterial(cycMat);
+        rootNode.attachChild(cyc);
     }
 }

@@ -53,7 +53,7 @@ public class Main extends SimpleApplication {
         theatre.addModel(rootNode, assetManager);
         
         // Setup bgcolour/skybox
-        viewPort.setBackgroundColor(ColorRGBA.Blue);
+        viewPort.setBackgroundColor(new ColorRGBA(0.15f, 0.15f, 0.15f, 1.0f));
         //rootNode.attachChild(SkyFactory.createSky(assetManager, "Textures/Sky/Bright/BrightSky.dds", false));
         //rootNode.attachChild(SkyFactory.createSky(assetManager, "Textures/Terrain/Rock2/rock.jpg", true));
     }
@@ -67,7 +67,7 @@ public class Main extends SimpleApplication {
         DirectionalLight sun = new DirectionalLight();
         sun.setColor(ColorRGBA.White);
         sun.setDirection(new Vector3f(-.5f,-.5f,-.5f).normalizeLocal());
-        rootNode.addLight(sun);
+        //rootNode.addLight(sun);
     }
     
     protected void setupCameras() {
