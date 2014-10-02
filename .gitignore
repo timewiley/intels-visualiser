@@ -19,6 +19,7 @@ hs_err_pid*
 # Netbeans project files
 nbproject
 liblwjgl.dylib
+liblwjgl.jnilib
 master-application.jnlp
 openal.dylib
 
