@@ -28,7 +28,8 @@ public class DMXPacket {
     public DMXPacket(int sequence, int universe, byte[] data) {
         this.sequence = sequence;
         this.universe = universe;
-        this.data = Arrays.copyOf(data, DMX_ADDRESSES);
+        //this.data = Arrays.copyOf(data, DMX_ADDRESSES);
+        this.data = data;
     }
     
     public DMXPacket(ArtNetPacket packet) {
