@@ -8,6 +8,8 @@ import com.jme3.scene.Node;
  * @author Timothy Wiley <timothyw@cse.unsw.edu.au>
  */
 public interface Model {
+    public static final String MAT_UNSHADED        = "Common/MatDefs/Misc/Unshaded.j3md";
+    public static final String MAT_LIGHTING        = "Common/MatDefs/Light/Lighting.j3md";
     
     /**
      * Add model to the render window
