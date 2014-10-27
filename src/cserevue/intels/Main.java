@@ -2,21 +2,23 @@ package cserevue.intels;
 
 import com.jme3.app.SimpleApplication;
 import com.jme3.light.AmbientLight;
-import com.jme3.light.DirectionalLight;
 import com.jme3.math.ColorRGBA;
-import com.jme3.math.Vector3f;
 import com.jme3.renderer.RenderManager;
 import com.jme3.renderer.queue.RenderQueue;
+import cserevue.intels.artnet.ArtNet;
+import cserevue.intels.artnet.ArtNetListener;
 import cserevue.intels.cameras.TheatreFlyCam;
+import cserevue.intels.dmx.DMXPacket;
 import cserevue.intels.fixtures.Fixture;
 import cserevue.intels.models.ScienceTheatre;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
  * test
  * @author normenhansen
  */
-public class Main extends SimpleApplication {
+public class Main extends SimpleApplication implements ArtNetListener {
 
     // Models
     private ScienceTheatre theatre;
@@ -26,6 +28,9 @@ public class Main extends SimpleApplication {
     
     // Camera/View
     private TheatreFlyCam theatreCam;
+    
+    // DMX over ArtNet
+    ArtNet artnet;
     
     public static void main(String[] args) {
         Main app = new Main();
@@ -112,6 +117,19 @@ public class Main extends SimpleApplication {
     }
     
     protected void setupArtNet() {
-        // TODO
+        try {
+            artnet = new ArtNet();
+            artnet.enable();
+            artnet.run();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+            System.exit(0);
+        }
+    }
+    
+    public void receive_artnet(DMXPacket dmx) {
+        for(Fixture fixture : fixtures) {
+            fixture.dmx_signal(dmx);
+        }
     }
 }
