@@ -1,11 +1,13 @@
 package cserevue.intels.artnet;
 
+import cserevue.intels.dmx.DMXPacket;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 
 /**
  * Listen to packets over the ArtNet protocol and generate DMX packets
@@ -23,6 +25,9 @@ public class ArtNet {
     
     // Operation
     private boolean operating;
+    
+    // Listeners
+    private ArrayList<ArtNetListener> listeners;
     
     /**
      * New ArtNet connection with default connection details.
@@ -44,6 +49,7 @@ public class ArtNet {
         this.address = address;
         this.port = port;
         operating = false;
+        listeners = new ArrayList<ArtNetListener>();
     }
     
     /**
@@ -58,6 +64,22 @@ public class ArtNet {
      */
     public void disable() {
         operating = false;
+    }
+    
+    /**
+     * Add ArtNetListener
+     * @param listener 
+     */
+    public void addListener(ArtNetListener listener) {
+        listeners.add(listener);
+    }
+    
+    /**
+     * Remove ArtNetListener
+     * @param listener 
+     */
+    public void removeListener(ArtNetListener listener) {
+        listeners.remove(listener);
     }
     
     /**
@@ -81,12 +103,18 @@ public class ArtNet {
             // Parse
             ArtNetPacket artnetPacket = Parser.parse(packet);
             if (artnetPacket != null) {
+                // Notify listeners
+                DMXPacket dmx = new DMXPacket(artnetPacket);
+                for (ArtNetListener listener : listeners) {
+                    listener.receive_artnet(dmx);
+                }
+                
                 // display response
-                System.out.println("Recieved Packet Opcode: " + artnetPacket.getOpcode());
-                System.out.println("Data:" + artnetPacket.getData());
+                //System.out.println("Recieved Packet Opcode: " + artnetPacket.getOpcode());
+                //System.out.println("Data:" + artnetPacket.getData());
             } else {
-                String recieved = new String(packet.getData(), 0, packet.getLength());
-                System.out.println("Packet parse failed: " + recieved);
+                //String recieved = new String(packet.getData(), 0, packet.getLength());
+                //System.out.println("Packet parse failed: " + recieved);
             }
 
             
