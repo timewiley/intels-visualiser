@@ -1,6 +1,5 @@
 package cserevue.intels.artnet;
 
-import cserevue.intels.dmx.DMXPacket;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -68,16 +67,13 @@ public class ArtNet {
     public void run() throws IOException {
         // Create a new socket on the address/port combination
         InetAddress iAddress = InetAddress.getByName(address);
-        //DatagramSocket socket = new DatagramSocket(port, iAddress);
-        DatagramSocket socket = new DatagramSocket(port);
+        DatagramSocket socket = new DatagramSocket(port, iAddress);
         
         // Parse buffer
         byte[] buffer = new byte[BUFFER_SIZE];
         
         
         while (operating) {
-            //System.out.println("ArtNet operating");
-                    
             // Recieve next packet
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
             socket.receive(packet);
@@ -85,10 +81,12 @@ public class ArtNet {
             // Parse
             ArtNetPacket artnetPacket = Parser.parse(packet);
             if (artnetPacket != null) {
-                processPacket(artnetPacket);
+                // display response
+                System.out.println("Recieved Packet Opcode: " + artnetPacket.getOpcode());
+                System.out.println("Data:" + artnetPacket.getData());
             } else {
-                //String recieved = new String(packet.getData(), 0, packet.getLength());
-                //System.out.println("Packet parse failed: " + recieved);
+                String recieved = new String(packet.getData(), 0, packet.getLength());
+                System.out.println("Packet parse failed: " + recieved);
             }
 
             
@@ -96,16 +94,6 @@ public class ArtNet {
      
         // Close the connection
         socket.close();
-    }
-    
-    private void processPacket(ArtNetPacket packet) {
-        // display response
-        System.out.println("Recieved Packet Opcode: " + packet.getOpcode());
-        System.out.println("Data: " + new String(packet.getData(), 0, packet.getData().length));
-        
-        if  (packet.getOpcode() == OpcodeType.DMX) {
-            DMXPacket dmx = new DMXPacket(packet);
-        }
     }
     
     public static void main(String[] args) throws UnknownHostException, SocketException, IOException {
