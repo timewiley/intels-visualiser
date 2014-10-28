@@ -14,6 +14,7 @@ import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
 import com.jme3.scene.shape.Cylinder;
 import com.jme3.scene.shape.Dome;
+import cserevue.intels.dmx.DMXPacket;
 import cserevue.intels.models.Model;
 
 /**
@@ -23,15 +24,22 @@ import cserevue.intels.models.Model;
 public class Par64 extends RGBFixture {
     
     // Dimensions
-    public static final int PAR_DOME_PLANES         = 20;
+    public static final int   PAR_DOME_PLANES       = 20;
     public static final float PAR_HEIGHT            = 0.5f;
     public static final float PAR_RADIUS            = 0.2f;
-    public static final int PAR_SAMPLES_AXIS        = 20;
-    public static final int PAR_SAMPLES_RADIAL      = 20;
+    public static final int   PAR_SAMPLES_AXIS      = 20;
+    public static final int   PAR_SAMPLES_RADIAL    = 20;
+    
+    public static final float PAR_DISC_HEIGHT       = 0.01f;
+    public static final float PAR_DISC_RADIUS       = PAR_RADIUS - 0.03f;
     
     // Meshes
     private static final Cylinder cylinderMesh = new Cylinder(PAR_SAMPLES_AXIS, PAR_SAMPLES_RADIAL, PAR_RADIUS, PAR_HEIGHT, false);
-    private static final Dome backMesh = new Dome(PAR_DOME_PLANES, PAR_SAMPLES_RADIAL, PAR_RADIUS);
+    private static final Cylinder discMesh     = new Cylinder(PAR_SAMPLES_AXIS, PAR_SAMPLES_RADIAL, PAR_DISC_RADIUS, PAR_DISC_HEIGHT, true);
+    private static final Dome     backMesh     = new Dome(PAR_DOME_PLANES, PAR_SAMPLES_RADIAL, PAR_RADIUS);
+    
+    // Disc
+    Material discMat;
     
     // Lamp
     private SpotLight lamp;
@@ -67,6 +75,17 @@ public class Par64 extends RGBFixture {
         par64.setShadowMode(RenderQueue.ShadowMode.Cast);
         rootNode.attachChild(par64);
         
+        // Front coloured disc for effect
+        discMat = new Material(assetManager, Model.MAT_UNSHADED);
+        //discMat.setBoolean("UseMaterialColors",true);
+        //discMat.setColor("Ambient", blackColour);
+        //discMat.setColor("Diffuse", blackColour);
+        discMat.setColor("Color", blackColour);
+        Geometry disc = new Geometry("Par64-disc-" + id, discMesh);
+        disc.setLocalTranslation(0, 0, PAR_HEIGHT / 2);
+        disc.setMaterial(discMat);
+        par64.attachChild(disc);
+        
         // Light Source
         lamp = new SpotLight();
         lamp.setSpotRange(30f);
@@ -80,4 +99,15 @@ public class Par64 extends RGBFixture {
         // Overwrite colour with internal lamp colour
         colour = lamp.getColor();
     }
+    
+    @Override
+    public void dmx_signal(DMXPacket dmx) {
+        super.dmx_signal(dmx);
+        if (dmx.getUniverse() == universe) {
+            //discMat.setColor("Ambient", colour);
+            //discMat.setColor("Diffuse", colour);
+            discMat.setColor("Color", colour);
+        }
+    }
+    
 }

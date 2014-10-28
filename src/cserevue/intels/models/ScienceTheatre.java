@@ -13,7 +13,6 @@ import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
 import com.jme3.scene.shape.Box;
 import com.jme3.texture.Texture;
-import cserevue.intels.dmx.DMXPacket;
 import cserevue.intels.dmx.DMXPacketTest;
 import cserevue.intels.fixtures.Fixture;
 import cserevue.intels.fixtures.FixtureList;
@@ -316,7 +315,8 @@ public class ScienceTheatre implements Model, FixtureList {
         fixtures.add(par3);
         
         // TODO - Remove
-        DMXPacket dmx = new DMXPacketTest(1, 1, (byte) 255);
+        DMXPacketTest dmx = new DMXPacketTest(1, 1, (byte) 255);
+        dmx.fill(ColorRGBA.Blue, PAR_DMX_START, 18, PAR_DMX_NADDRS);
         for (Fixture f : fixtures) {
             System.out.println(f.getName());
             f.dmx_signal(dmx);
