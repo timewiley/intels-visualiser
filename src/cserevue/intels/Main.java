@@ -52,7 +52,7 @@ public class Main extends SimpleApplication implements ArtNetListener {
         setupCameras();
         
         // Setup and enable ArtNet DMX
-        setupArtNet();
+        //setupArtNet();
         
         // REMOVE IF NOT DEBUGGING
         //viewPort.addProcessor(new WireProcessor(assetManager));
@@ -101,6 +101,8 @@ public class Main extends SimpleApplication implements ArtNetListener {
         // Science Theatre Fixtures
         ArrayList<Fixture> scienceTheatre = theatre.createFixtures(rootNode, assetManager, viewPort);
         fixtures.addAll(scienceTheatre);
+        
+        
     }
     
     protected void setupCameras() {
