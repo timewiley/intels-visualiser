@@ -70,4 +70,14 @@ public class DMXPacket {
     public float getValueFloat(int address) {
         return getValueInt(address) / 255.0f;
     }
+    
+    /**
+     * Converts the given float value in the range [0,1] to a byte value [0,255]
+     * @param value
+     * @return 
+     */
+    public static byte floatToByte(float value) {
+        int iValue = (int) value * 255;
+        return (byte) iValue;
+    }
 }
