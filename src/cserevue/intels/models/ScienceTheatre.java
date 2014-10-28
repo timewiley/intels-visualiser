@@ -280,37 +280,37 @@ public class ScienceTheatre implements Model, FixtureList {
         fixtures.add(par1);
         fixtures.add(par2);
         fixtures.add(par3);
-        par1 = new Par64("fohc-op-1", universe, PAR_DMX_START + 18*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_1, z_pos_fohc), rotation_op_1, rootNode, assetManager, viewPort);
-        par2 = new Par64("fohc-op-2", universe, PAR_DMX_START + 17*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_2, z_pos_fohc), rotation_op_2, rootNode, assetManager, viewPort);
-        par3 = new Par64("fohc-op-3", universe, PAR_DMX_START + 16*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_3, z_pos_fohc), rotation_op_3, rootNode, assetManager, viewPort);
+        par1 = new Par64("fohc-op-1", universe, PAR_DMX_START + 17*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_1, z_pos_fohc), rotation_op_1, rootNode, assetManager, viewPort);
+        par2 = new Par64("fohc-op-2", universe, PAR_DMX_START + 16*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_2, z_pos_fohc), rotation_op_2, rootNode, assetManager, viewPort);
+        par3 = new Par64("fohc-op-3", universe, PAR_DMX_START + 15*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_3, z_pos_fohc), rotation_op_3, rootNode, assetManager, viewPort);
         fixtures.add(par1);
         fixtures.add(par2);
         fixtures.add(par3);
         
         // Qtr Parcans
-        par1 = new Par64("qtr-p-1", universe, PAR_DMX_START + 6*PAR_DMX_NADDRS, new Vector3f(x_pos_p, PAR_Y_1, z_pos_qtr), rotation_p_1, rootNode, assetManager, viewPort);
-        par2 = new Par64("qtr-p-2", universe, PAR_DMX_START + 5*PAR_DMX_NADDRS, new Vector3f(x_pos_p, PAR_Y_2, z_pos_qtr), rotation_p_2, rootNode, assetManager, viewPort);
-        par3 = new Par64("qtr-p-3", universe, PAR_DMX_START + 4*PAR_DMX_NADDRS, new Vector3f(x_pos_p, PAR_Y_3, z_pos_qtr), rotation_p_3, rootNode, assetManager, viewPort);
+        par1 = new Par64("qtr-p-1", universe, PAR_DMX_START + 5*PAR_DMX_NADDRS, new Vector3f(x_pos_p, PAR_Y_1, z_pos_qtr), rotation_p_1, rootNode, assetManager, viewPort);
+        par2 = new Par64("qtr-p-2", universe, PAR_DMX_START + 4*PAR_DMX_NADDRS, new Vector3f(x_pos_p, PAR_Y_2, z_pos_qtr), rotation_p_2, rootNode, assetManager, viewPort);
+        par3 = new Par64("qtr-p-3", universe, PAR_DMX_START + 3*PAR_DMX_NADDRS, new Vector3f(x_pos_p, PAR_Y_3, z_pos_qtr), rotation_p_3, rootNode, assetManager, viewPort);
         fixtures.add(par1);
         fixtures.add(par2);
         fixtures.add(par3);
-        par1 = new Par64("qtr-op-1", universe, PAR_DMX_START + 15*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_1, z_pos_qtr), rotation_op_1, rootNode, assetManager, viewPort);
-        par2 = new Par64("qtr-op-2", universe, PAR_DMX_START + 14*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_2, z_pos_qtr), rotation_op_2, rootNode, assetManager, viewPort);
-        par3 = new Par64("qtr-op-3", universe, PAR_DMX_START + 13*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_3, z_pos_qtr), rotation_op_3, rootNode, assetManager, viewPort);
+        par1 = new Par64("qtr-op-1", universe, PAR_DMX_START + 14*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_1, z_pos_qtr), rotation_op_1, rootNode, assetManager, viewPort);
+        par2 = new Par64("qtr-op-2", universe, PAR_DMX_START + 13*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_2, z_pos_qtr), rotation_op_2, rootNode, assetManager, viewPort);
+        par3 = new Par64("qtr-op-3", universe, PAR_DMX_START + 12*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_3, z_pos_qtr), rotation_op_3, rootNode, assetManager, viewPort);
         fixtures.add(par1);
         fixtures.add(par2);
         fixtures.add(par3);
         
         // Half Parcans
-        par1 = new Par64("half-p-1", universe, PAR_DMX_START + 9*PAR_DMX_NADDRS, new Vector3f(x_pos_p, PAR_Y_1, z_pos_half), rotation_p_1, rootNode, assetManager, viewPort);
-        par2 = new Par64("half-p-2", universe, PAR_DMX_START + 8*PAR_DMX_NADDRS, new Vector3f(x_pos_p, PAR_Y_2, z_pos_half), rotation_p_2, rootNode, assetManager, viewPort);
-        par3 = new Par64("half-p-3", universe, PAR_DMX_START + 7*PAR_DMX_NADDRS, new Vector3f(x_pos_p, PAR_Y_3, z_pos_half), rotation_p_3, rootNode, assetManager, viewPort);
+        par1 = new Par64("half-p-1", universe, PAR_DMX_START + 8*PAR_DMX_NADDRS, new Vector3f(x_pos_p, PAR_Y_1, z_pos_half), rotation_p_1, rootNode, assetManager, viewPort);
+        par2 = new Par64("half-p-2", universe, PAR_DMX_START + 7*PAR_DMX_NADDRS, new Vector3f(x_pos_p, PAR_Y_2, z_pos_half), rotation_p_2, rootNode, assetManager, viewPort);
+        par3 = new Par64("half-p-3", universe, PAR_DMX_START + 6*PAR_DMX_NADDRS, new Vector3f(x_pos_p, PAR_Y_3, z_pos_half), rotation_p_3, rootNode, assetManager, viewPort);
         fixtures.add(par1);
         fixtures.add(par2);
         fixtures.add(par3);
-        par1 = new Par64("half-op-1", universe, PAR_DMX_START + 12*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_1, z_pos_half), rotation_op_1, rootNode, assetManager, viewPort);
-        par2 = new Par64("half-op-2", universe, PAR_DMX_START + 11*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_2, z_pos_half), rotation_op_2, rootNode, assetManager, viewPort);
-        par3 = new Par64("half-op-3", universe, PAR_DMX_START + 10*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_3, z_pos_half), rotation_op_3, rootNode, assetManager, viewPort);
+        par1 = new Par64("half-op-1", universe, PAR_DMX_START + 11*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_1, z_pos_half), rotation_op_1, rootNode, assetManager, viewPort);
+        par2 = new Par64("half-op-2", universe, PAR_DMX_START + 10*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_2, z_pos_half), rotation_op_2, rootNode, assetManager, viewPort);
+        par3 = new Par64("half-op-3", universe, PAR_DMX_START + 9*PAR_DMX_NADDRS, new Vector3f(x_pos_op, PAR_Y_3, z_pos_half), rotation_op_3, rootNode, assetManager, viewPort);
         fixtures.add(par1);
         fixtures.add(par2);
         fixtures.add(par3);
