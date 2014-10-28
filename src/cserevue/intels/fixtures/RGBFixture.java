@@ -23,8 +23,8 @@ public abstract class RGBFixture extends Fixture {
     public void dmx_signal(DMXPacket dmx) {
         if (dmx.getUniverse() == universe) {
             colour.r = dmx.getValueFloat(address);
-            colour.b = dmx.getValueFloat(address + 1);
-            colour.g = dmx.getValueFloat(address + 2);
+            colour.g = dmx.getValueFloat(address + 1);
+            colour.b = dmx.getValueFloat(address + 2);
         }
     }
 }
