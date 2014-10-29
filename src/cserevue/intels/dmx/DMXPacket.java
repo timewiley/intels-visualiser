@@ -77,7 +77,7 @@ public class DMXPacket {
      * @return 
      */
     public static byte floatToByte(float value) {
-        int iValue = (int) value * 255;
+        int iValue = (int) (value * 255);
         return (byte) iValue;
     }
 }
