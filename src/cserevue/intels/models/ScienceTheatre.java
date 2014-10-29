@@ -14,6 +14,7 @@ import com.jme3.scene.Node;
 import com.jme3.scene.shape.Box;
 import com.jme3.texture.Texture;
 import cserevue.intels.dmx.DMXPacketTest;
+import cserevue.intels.fixtures.Cyc;
 import cserevue.intels.fixtures.Fixture;
 import cserevue.intels.fixtures.FixtureList;
 import cserevue.intels.fixtures.Par64;
@@ -236,13 +237,13 @@ public class ScienceTheatre implements Model, FixtureList {
         rootNode.attachChild(traveller1);
         rootNode.attachChild(traveller2);
         
-        // Cyc
-        Box cycBox = new Box( STAGE_WIDTH / 2, STAGE_HEIGHT / 2, CURTAIN_WIDTH );
-        Geometry cyc = new Geometry("Half", cycBox);
-        cyc.setLocalTranslation(0, cycBox.getYExtent() + STAGE_FLOOR_HEIGHT, cycBox.getZExtent() - STAGE_DEPTH / 2);
-        cyc.setMaterial(cycMat);
-        cyc.setShadowMode(RenderQueue.ShadowMode.Receive);
-        rootNode.attachChild(cyc);
+        // Cyc - now a fixture
+        //Box cycBox = new Box( STAGE_WIDTH / 2, STAGE_HEIGHT / 2, CURTAIN_WIDTH );
+        //Geometry cyc = new Geometry("Half", cycBox);
+        //cyc.setLocalTranslation(0, cycBox.getYExtent() + STAGE_FLOOR_HEIGHT, cycBox.getZExtent() - STAGE_DEPTH / 2);
+        //cyc.setMaterial(cycMat);
+        //cyc.setShadowMode(RenderQueue.ShadowMode.Receive);
+        //rootNode.attachChild(cyc);
     }
 
     public ArrayList<Fixture> createFixtures(Node rootNode, AssetManager assetManager,
@@ -314,11 +315,23 @@ public class ScienceTheatre implements Model, FixtureList {
         fixtures.add(par2);
         fixtures.add(par3);
         
+        // Cyc
+        Cyc cyc = new Cyc(rootNode, assetManager);
+        fixtures.add(cyc);
+        
         // TODO - Remove
         DMXPacketTest dmx = new DMXPacketTest(1, 1, (byte) 255);
         dmx.fill(ColorRGBA.Blue, PAR_DMX_START, 18, PAR_DMX_NADDRS);
+        for (int i = 0; i != Cyc.N_LIGHTS; ++i) {
+            float value = (1.0f / Cyc.N_LIGHTS) * i;
+            int addr = Cyc.DMX_ADDR + i*3;
+            ColorRGBA colour = new ColorRGBA(1.0f, value, 0.0f, 1.0f);
+            dmx.fill(colour, addr, 1);
+        }
+        //dmx.fill(ColorRGBA.Red, Cyc.DMX_ADDR, 30, Cyc.N_CHANNELS);
+        //dmx.fill(ColorRGBA.Green, Cyc.DMX_ADDR + 30*Cyc.N_CHANNELS, 30, Cyc.N_CHANNELS);
+        //dmx.fill(ColorRGBA.Blue, Cyc.DMX_ADDR + 60*Cyc.N_CHANNELS, 30, Cyc.N_CHANNELS);
         for (Fixture f : fixtures) {
-            System.out.println(f.getName());
             f.dmx_signal(dmx);
         }
         
