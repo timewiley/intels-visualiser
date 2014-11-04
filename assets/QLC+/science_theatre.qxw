@@ -1,0 +1,2017 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Workspace>
+<Workspace xmlns="http://qlcplus.sourceforge.net/Workspace" CurrentWindow="VirtualConsole">
+ <Creator>
+  <Name>Q Light Controller Plus</Name>
+  <Version>4.7.4</Version>
+  <Author>Timothy Wiley</Author>
+ </Creator>
+ <Engine>
+  <InputOutputMap>
+   <Universe Name="Universe 1" ID="0" Passthrough="0">
+    <Output Plugin="E1.31" Line="0"/>
+   </Universe>
+   <Universe Name="Universe 2" ID="1" Passthrough="0"/>
+   <Universe Name="Universe 3" ID="2" Passthrough="0"/>
+   <Universe Name="Universe 4" ID="3" Passthrough="0"/>
+  </InputOutputMap>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>0</ID>
+   <Name>Cyc #1</Name>
+   <Universe>0</Universe>
+   <Address>0</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>1</ID>
+   <Name>Cyc #2</Name>
+   <Universe>0</Universe>
+   <Address>3</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>2</ID>
+   <Name>Cyc #3</Name>
+   <Universe>0</Universe>
+   <Address>6</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>3</ID>
+   <Name>Cyc #4</Name>
+   <Universe>0</Universe>
+   <Address>9</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>4</ID>
+   <Name>Cyc #5</Name>
+   <Universe>0</Universe>
+   <Address>12</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>5</ID>
+   <Name>Cyc #6</Name>
+   <Universe>0</Universe>
+   <Address>15</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>6</ID>
+   <Name>Cyc #7</Name>
+   <Universe>0</Universe>
+   <Address>18</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>7</ID>
+   <Name>Cyc #8</Name>
+   <Universe>0</Universe>
+   <Address>21</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>8</ID>
+   <Name>Cyc #9</Name>
+   <Universe>0</Universe>
+   <Address>24</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>9</ID>
+   <Name>Cyc #10</Name>
+   <Universe>0</Universe>
+   <Address>27</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>10</ID>
+   <Name>Cyc #11</Name>
+   <Universe>0</Universe>
+   <Address>30</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>11</ID>
+   <Name>Cyc #12</Name>
+   <Universe>0</Universe>
+   <Address>33</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>12</ID>
+   <Name>Cyc #13</Name>
+   <Universe>0</Universe>
+   <Address>36</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>13</ID>
+   <Name>Cyc #14</Name>
+   <Universe>0</Universe>
+   <Address>39</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>14</ID>
+   <Name>Cyc #15</Name>
+   <Universe>0</Universe>
+   <Address>42</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>15</ID>
+   <Name>Cyc #16</Name>
+   <Universe>0</Universe>
+   <Address>45</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>16</ID>
+   <Name>Cyc #17</Name>
+   <Universe>0</Universe>
+   <Address>48</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>17</ID>
+   <Name>Cyc #18</Name>
+   <Universe>0</Universe>
+   <Address>51</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>18</ID>
+   <Name>Cyc #19</Name>
+   <Universe>0</Universe>
+   <Address>54</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>19</ID>
+   <Name>Cyc #20</Name>
+   <Universe>0</Universe>
+   <Address>57</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>20</ID>
+   <Name>Cyc #21</Name>
+   <Universe>0</Universe>
+   <Address>60</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>21</ID>
+   <Name>Cyc #22</Name>
+   <Universe>0</Universe>
+   <Address>63</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>22</ID>
+   <Name>Cyc #23</Name>
+   <Universe>0</Universe>
+   <Address>66</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>23</ID>
+   <Name>Cyc #24</Name>
+   <Universe>0</Universe>
+   <Address>69</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>24</ID>
+   <Name>Cyc #25</Name>
+   <Universe>0</Universe>
+   <Address>72</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>25</ID>
+   <Name>Cyc #26</Name>
+   <Universe>0</Universe>
+   <Address>75</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>26</ID>
+   <Name>Cyc #27</Name>
+   <Universe>0</Universe>
+   <Address>78</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>27</ID>
+   <Name>Cyc #28</Name>
+   <Universe>0</Universe>
+   <Address>81</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>28</ID>
+   <Name>Cyc #29</Name>
+   <Universe>0</Universe>
+   <Address>84</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>29</ID>
+   <Name>Cyc #30</Name>
+   <Universe>0</Universe>
+   <Address>87</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>30</ID>
+   <Name>Cyc #31</Name>
+   <Universe>0</Universe>
+   <Address>90</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>31</ID>
+   <Name>Cyc #32</Name>
+   <Universe>0</Universe>
+   <Address>93</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>32</ID>
+   <Name>Cyc #33</Name>
+   <Universe>0</Universe>
+   <Address>96</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>33</ID>
+   <Name>Cyc #34</Name>
+   <Universe>0</Universe>
+   <Address>99</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>34</ID>
+   <Name>Cyc #35</Name>
+   <Universe>0</Universe>
+   <Address>102</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>35</ID>
+   <Name>Cyc #36</Name>
+   <Universe>0</Universe>
+   <Address>105</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>36</ID>
+   <Name>Cyc #37</Name>
+   <Universe>0</Universe>
+   <Address>108</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>37</ID>
+   <Name>Cyc #38</Name>
+   <Universe>0</Universe>
+   <Address>111</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>38</ID>
+   <Name>Cyc #39</Name>
+   <Universe>0</Universe>
+   <Address>114</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>39</ID>
+   <Name>Cyc #40</Name>
+   <Universe>0</Universe>
+   <Address>117</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>40</ID>
+   <Name>Cyc #41</Name>
+   <Universe>0</Universe>
+   <Address>120</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>41</ID>
+   <Name>Cyc #42</Name>
+   <Universe>0</Universe>
+   <Address>123</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>42</ID>
+   <Name>Cyc #43</Name>
+   <Universe>0</Universe>
+   <Address>126</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>43</ID>
+   <Name>Cyc #44</Name>
+   <Universe>0</Universe>
+   <Address>129</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>44</ID>
+   <Name>Cyc #45</Name>
+   <Universe>0</Universe>
+   <Address>132</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>45</ID>
+   <Name>Cyc #46</Name>
+   <Universe>0</Universe>
+   <Address>135</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>46</ID>
+   <Name>Cyc #47</Name>
+   <Universe>0</Universe>
+   <Address>138</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>47</ID>
+   <Name>Cyc #48</Name>
+   <Universe>0</Universe>
+   <Address>141</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>48</ID>
+   <Name>Cyc #49</Name>
+   <Universe>0</Universe>
+   <Address>144</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>49</ID>
+   <Name>Cyc #50</Name>
+   <Universe>0</Universe>
+   <Address>147</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>50</ID>
+   <Name>Cyc #51</Name>
+   <Universe>0</Universe>
+   <Address>150</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>51</ID>
+   <Name>Cyc #52</Name>
+   <Universe>0</Universe>
+   <Address>153</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>52</ID>
+   <Name>Cyc #53</Name>
+   <Universe>0</Universe>
+   <Address>156</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>53</ID>
+   <Name>Cyc #54</Name>
+   <Universe>0</Universe>
+   <Address>159</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>54</ID>
+   <Name>Cyc #55</Name>
+   <Universe>0</Universe>
+   <Address>162</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>55</ID>
+   <Name>Cyc #56</Name>
+   <Universe>0</Universe>
+   <Address>165</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>56</ID>
+   <Name>Cyc #57</Name>
+   <Universe>0</Universe>
+   <Address>168</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>57</ID>
+   <Name>Cyc #58</Name>
+   <Universe>0</Universe>
+   <Address>171</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>58</ID>
+   <Name>Cyc #59</Name>
+   <Universe>0</Universe>
+   <Address>174</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>59</ID>
+   <Name>Cyc #60</Name>
+   <Universe>0</Universe>
+   <Address>177</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>60</ID>
+   <Name>Cyc #61</Name>
+   <Universe>0</Universe>
+   <Address>180</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>61</ID>
+   <Name>Cyc #62</Name>
+   <Universe>0</Universe>
+   <Address>183</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>62</ID>
+   <Name>Cyc #63</Name>
+   <Universe>0</Universe>
+   <Address>186</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>63</ID>
+   <Name>Cyc #64</Name>
+   <Universe>0</Universe>
+   <Address>189</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>64</ID>
+   <Name>Cyc #65</Name>
+   <Universe>0</Universe>
+   <Address>192</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>65</ID>
+   <Name>Cyc #66</Name>
+   <Universe>0</Universe>
+   <Address>195</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>66</ID>
+   <Name>Cyc #67</Name>
+   <Universe>0</Universe>
+   <Address>198</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>67</ID>
+   <Name>Cyc #68</Name>
+   <Universe>0</Universe>
+   <Address>201</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>68</ID>
+   <Name>Cyc #69</Name>
+   <Universe>0</Universe>
+   <Address>204</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>69</ID>
+   <Name>Cyc #70</Name>
+   <Universe>0</Universe>
+   <Address>207</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>70</ID>
+   <Name>Cyc #71</Name>
+   <Universe>0</Universe>
+   <Address>210</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>71</ID>
+   <Name>Cyc #72</Name>
+   <Universe>0</Universe>
+   <Address>213</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>72</ID>
+   <Name>Cyc #73</Name>
+   <Universe>0</Universe>
+   <Address>216</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>73</ID>
+   <Name>Cyc #74</Name>
+   <Universe>0</Universe>
+   <Address>219</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>74</ID>
+   <Name>Cyc #75</Name>
+   <Universe>0</Universe>
+   <Address>222</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>75</ID>
+   <Name>Cyc #76</Name>
+   <Universe>0</Universe>
+   <Address>225</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>76</ID>
+   <Name>Cyc #77</Name>
+   <Universe>0</Universe>
+   <Address>228</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>77</ID>
+   <Name>Cyc #78</Name>
+   <Universe>0</Universe>
+   <Address>231</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>78</ID>
+   <Name>Cyc #79</Name>
+   <Universe>0</Universe>
+   <Address>234</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>79</ID>
+   <Name>Cyc #80</Name>
+   <Universe>0</Universe>
+   <Address>237</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>80</ID>
+   <Name>Cyc #81</Name>
+   <Universe>0</Universe>
+   <Address>240</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>81</ID>
+   <Name>Cyc #82</Name>
+   <Universe>0</Universe>
+   <Address>243</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>82</ID>
+   <Name>Cyc #83</Name>
+   <Universe>0</Universe>
+   <Address>246</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>83</ID>
+   <Name>Cyc #84</Name>
+   <Universe>0</Universe>
+   <Address>249</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>84</ID>
+   <Name>Cyc #85</Name>
+   <Universe>0</Universe>
+   <Address>252</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>85</ID>
+   <Name>Cyc #86</Name>
+   <Universe>0</Universe>
+   <Address>255</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>86</ID>
+   <Name>Cyc #87</Name>
+   <Universe>0</Universe>
+   <Address>258</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>87</ID>
+   <Name>Cyc #88</Name>
+   <Universe>0</Universe>
+   <Address>261</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>88</ID>
+   <Name>Cyc #89</Name>
+   <Universe>0</Universe>
+   <Address>264</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>89</ID>
+   <Name>Cyc #90</Name>
+   <Universe>0</Universe>
+   <Address>267</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>90</ID>
+   <Name>Cyc #91</Name>
+   <Universe>0</Universe>
+   <Address>270</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>91</ID>
+   <Name>Cyc #92</Name>
+   <Universe>0</Universe>
+   <Address>273</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>92</ID>
+   <Name>Cyc #93</Name>
+   <Universe>0</Universe>
+   <Address>276</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>93</ID>
+   <Name>Cyc #94</Name>
+   <Universe>0</Universe>
+   <Address>279</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>94</ID>
+   <Name>Cyc #95</Name>
+   <Universe>0</Universe>
+   <Address>282</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>95</ID>
+   <Name>Cyc #96</Name>
+   <Universe>0</Universe>
+   <Address>285</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>96</ID>
+   <Name>Cyc #97</Name>
+   <Universe>0</Universe>
+   <Address>288</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>97</ID>
+   <Name>Cyc #98</Name>
+   <Universe>0</Universe>
+   <Address>291</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>98</ID>
+   <Name>Cyc #99</Name>
+   <Universe>0</Universe>
+   <Address>294</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>99</ID>
+   <Name>Cyc #100</Name>
+   <Universe>0</Universe>
+   <Address>297</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>100</ID>
+   <Name>Cyc #101</Name>
+   <Universe>0</Universe>
+   <Address>300</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>101</ID>
+   <Name>Cyc #102</Name>
+   <Universe>0</Universe>
+   <Address>303</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>102</ID>
+   <Name>Cyc #103</Name>
+   <Universe>0</Universe>
+   <Address>306</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>103</ID>
+   <Name>Cyc #104</Name>
+   <Universe>0</Universe>
+   <Address>309</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>104</ID>
+   <Name>Cyc #105</Name>
+   <Universe>0</Universe>
+   <Address>312</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>105</ID>
+   <Name>Cyc #106</Name>
+   <Universe>0</Universe>
+   <Address>315</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>106</ID>
+   <Name>Cyc #107</Name>
+   <Universe>0</Universe>
+   <Address>318</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>107</ID>
+   <Name>Cyc #108</Name>
+   <Universe>0</Universe>
+   <Address>321</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>108</ID>
+   <Name>Cyc #109</Name>
+   <Universe>0</Universe>
+   <Address>324</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>109</ID>
+   <Name>Cyc #110</Name>
+   <Universe>0</Universe>
+   <Address>327</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>110</ID>
+   <Name>Cyc #111</Name>
+   <Universe>0</Universe>
+   <Address>330</Address>
+   <Channels>3</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>Generic RGB</Model>
+   <Mode>RGB</Mode>
+   <ID>111</ID>
+   <Name>Cyc #112</Name>
+   <Universe>0</Universe>
+   <Address>333</Address>
+   <Channels>3</Channels>
+  </Fixture>
+ </Engine>
+ <VirtualConsole>
+  <Frame Caption="">
+   <Appearance>
+    <FrameStyle>None</FrameStyle>
+    <ForegroundColor>Default</ForegroundColor>
+    <BackgroundColor>Default</BackgroundColor>
+    <BackgroundImage>None</BackgroundImage>
+    <Font>Default</Font>
+   </Appearance>
+   <Frame ID="33" Caption="Cyc (Full)">
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <WindowState Width="195" X="0" Y="0" Height="250" Visible="True"/>
+    <AllowChildren>True</AllowChildren>
+    <AllowResize>True</AllowResize>
+    <ShowHeader>True</ShowHeader>
+    <Collapsed>False</Collapsed>
+    <Slider WidgetStyle="Slider" ID="39" Caption="Red" InvertedAppearance="false">
+     <WindowState Width="60" X="0" Y="35" Height="200" Visible="True"/>
+     <Appearance>
+      <FrameStyle>Sunken</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <SliderMode ValueDisplayStyle="Percentage" ClickAndGoType="None">Level</SliderMode>
+     <Level HighLimit="255" LowLimit="0" Value="0">
+      <Channel Fixture="0">0</Channel>
+      <Channel Fixture="1">0</Channel>
+      <Channel Fixture="2">0</Channel>
+      <Channel Fixture="3">0</Channel>
+      <Channel Fixture="4">0</Channel>
+      <Channel Fixture="5">0</Channel>
+      <Channel Fixture="6">0</Channel>
+      <Channel Fixture="7">0</Channel>
+      <Channel Fixture="8">0</Channel>
+      <Channel Fixture="9">0</Channel>
+      <Channel Fixture="10">0</Channel>
+      <Channel Fixture="11">0</Channel>
+      <Channel Fixture="12">0</Channel>
+      <Channel Fixture="13">0</Channel>
+      <Channel Fixture="14">0</Channel>
+      <Channel Fixture="15">0</Channel>
+      <Channel Fixture="16">0</Channel>
+      <Channel Fixture="17">0</Channel>
+      <Channel Fixture="18">0</Channel>
+      <Channel Fixture="19">0</Channel>
+      <Channel Fixture="20">0</Channel>
+      <Channel Fixture="21">0</Channel>
+      <Channel Fixture="22">0</Channel>
+      <Channel Fixture="23">0</Channel>
+      <Channel Fixture="24">0</Channel>
+      <Channel Fixture="25">0</Channel>
+      <Channel Fixture="26">0</Channel>
+      <Channel Fixture="27">0</Channel>
+      <Channel Fixture="28">0</Channel>
+      <Channel Fixture="29">0</Channel>
+      <Channel Fixture="30">0</Channel>
+      <Channel Fixture="31">0</Channel>
+      <Channel Fixture="32">0</Channel>
+      <Channel Fixture="33">0</Channel>
+      <Channel Fixture="34">0</Channel>
+      <Channel Fixture="35">0</Channel>
+      <Channel Fixture="36">0</Channel>
+      <Channel Fixture="37">0</Channel>
+      <Channel Fixture="38">0</Channel>
+      <Channel Fixture="39">0</Channel>
+      <Channel Fixture="40">0</Channel>
+      <Channel Fixture="41">0</Channel>
+      <Channel Fixture="42">0</Channel>
+      <Channel Fixture="43">0</Channel>
+      <Channel Fixture="44">0</Channel>
+      <Channel Fixture="45">0</Channel>
+      <Channel Fixture="46">0</Channel>
+      <Channel Fixture="47">0</Channel>
+      <Channel Fixture="48">0</Channel>
+      <Channel Fixture="49">0</Channel>
+      <Channel Fixture="50">0</Channel>
+      <Channel Fixture="51">0</Channel>
+      <Channel Fixture="52">0</Channel>
+      <Channel Fixture="53">0</Channel>
+      <Channel Fixture="54">0</Channel>
+      <Channel Fixture="55">0</Channel>
+      <Channel Fixture="56">0</Channel>
+      <Channel Fixture="57">0</Channel>
+      <Channel Fixture="58">0</Channel>
+      <Channel Fixture="59">0</Channel>
+      <Channel Fixture="60">0</Channel>
+      <Channel Fixture="61">0</Channel>
+      <Channel Fixture="62">0</Channel>
+      <Channel Fixture="63">0</Channel>
+      <Channel Fixture="64">0</Channel>
+      <Channel Fixture="65">0</Channel>
+      <Channel Fixture="66">0</Channel>
+      <Channel Fixture="67">0</Channel>
+      <Channel Fixture="68">0</Channel>
+      <Channel Fixture="69">0</Channel>
+      <Channel Fixture="70">0</Channel>
+      <Channel Fixture="71">0</Channel>
+      <Channel Fixture="72">0</Channel>
+      <Channel Fixture="73">0</Channel>
+      <Channel Fixture="74">0</Channel>
+      <Channel Fixture="75">0</Channel>
+      <Channel Fixture="76">0</Channel>
+      <Channel Fixture="77">0</Channel>
+      <Channel Fixture="78">0</Channel>
+      <Channel Fixture="79">0</Channel>
+      <Channel Fixture="80">0</Channel>
+      <Channel Fixture="81">0</Channel>
+      <Channel Fixture="82">0</Channel>
+      <Channel Fixture="83">0</Channel>
+      <Channel Fixture="84">0</Channel>
+      <Channel Fixture="85">0</Channel>
+      <Channel Fixture="86">0</Channel>
+      <Channel Fixture="87">0</Channel>
+      <Channel Fixture="88">0</Channel>
+      <Channel Fixture="89">0</Channel>
+      <Channel Fixture="90">0</Channel>
+      <Channel Fixture="91">0</Channel>
+      <Channel Fixture="92">0</Channel>
+      <Channel Fixture="93">0</Channel>
+      <Channel Fixture="94">0</Channel>
+      <Channel Fixture="95">0</Channel>
+      <Channel Fixture="96">0</Channel>
+      <Channel Fixture="97">0</Channel>
+      <Channel Fixture="98">0</Channel>
+      <Channel Fixture="99">0</Channel>
+      <Channel Fixture="100">0</Channel>
+      <Channel Fixture="101">0</Channel>
+      <Channel Fixture="102">0</Channel>
+      <Channel Fixture="103">0</Channel>
+      <Channel Fixture="104">0</Channel>
+      <Channel Fixture="105">0</Channel>
+      <Channel Fixture="106">0</Channel>
+      <Channel Fixture="107">0</Channel>
+      <Channel Fixture="108">0</Channel>
+      <Channel Fixture="109">0</Channel>
+      <Channel Fixture="110">0</Channel>
+      <Channel Fixture="111">0</Channel>
+     </Level>
+     <Playback>
+      <Function>4294967295</Function>
+     </Playback>
+    </Slider>
+    <Slider WidgetStyle="Slider" Caption="Blue" InvertedAppearance="false">
+     <WindowState Width="60" X="120" Y="35" Height="200" Visible="True"/>
+     <Appearance>
+      <FrameStyle>Sunken</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <SliderMode ValueDisplayStyle="Percentage" ClickAndGoType="None">Level</SliderMode>
+     <Level HighLimit="255" LowLimit="0" Value="0">
+      <Channel Fixture="0">2</Channel>
+      <Channel Fixture="1">2</Channel>
+      <Channel Fixture="2">2</Channel>
+      <Channel Fixture="3">2</Channel>
+      <Channel Fixture="4">2</Channel>
+      <Channel Fixture="5">2</Channel>
+      <Channel Fixture="6">2</Channel>
+      <Channel Fixture="7">2</Channel>
+      <Channel Fixture="8">2</Channel>
+      <Channel Fixture="9">2</Channel>
+      <Channel Fixture="10">2</Channel>
+      <Channel Fixture="11">2</Channel>
+      <Channel Fixture="12">2</Channel>
+      <Channel Fixture="13">2</Channel>
+      <Channel Fixture="14">2</Channel>
+      <Channel Fixture="15">2</Channel>
+      <Channel Fixture="16">2</Channel>
+      <Channel Fixture="17">2</Channel>
+      <Channel Fixture="18">2</Channel>
+      <Channel Fixture="19">2</Channel>
+      <Channel Fixture="20">2</Channel>
+      <Channel Fixture="21">2</Channel>
+      <Channel Fixture="22">2</Channel>
+      <Channel Fixture="23">2</Channel>
+      <Channel Fixture="24">2</Channel>
+      <Channel Fixture="25">2</Channel>
+      <Channel Fixture="26">2</Channel>
+      <Channel Fixture="27">2</Channel>
+      <Channel Fixture="28">2</Channel>
+      <Channel Fixture="29">2</Channel>
+      <Channel Fixture="30">2</Channel>
+      <Channel Fixture="31">2</Channel>
+      <Channel Fixture="32">2</Channel>
+      <Channel Fixture="33">2</Channel>
+      <Channel Fixture="34">2</Channel>
+      <Channel Fixture="35">2</Channel>
+      <Channel Fixture="36">2</Channel>
+      <Channel Fixture="37">2</Channel>
+      <Channel Fixture="38">2</Channel>
+      <Channel Fixture="39">2</Channel>
+      <Channel Fixture="40">2</Channel>
+      <Channel Fixture="41">2</Channel>
+      <Channel Fixture="42">2</Channel>
+      <Channel Fixture="43">2</Channel>
+      <Channel Fixture="44">2</Channel>
+      <Channel Fixture="45">2</Channel>
+      <Channel Fixture="46">2</Channel>
+      <Channel Fixture="47">2</Channel>
+      <Channel Fixture="48">2</Channel>
+      <Channel Fixture="49">2</Channel>
+      <Channel Fixture="50">2</Channel>
+      <Channel Fixture="51">2</Channel>
+      <Channel Fixture="52">2</Channel>
+      <Channel Fixture="53">2</Channel>
+      <Channel Fixture="54">2</Channel>
+      <Channel Fixture="55">2</Channel>
+      <Channel Fixture="56">2</Channel>
+      <Channel Fixture="57">2</Channel>
+      <Channel Fixture="58">2</Channel>
+      <Channel Fixture="59">2</Channel>
+      <Channel Fixture="60">2</Channel>
+      <Channel Fixture="61">2</Channel>
+      <Channel Fixture="62">2</Channel>
+      <Channel Fixture="63">2</Channel>
+      <Channel Fixture="64">2</Channel>
+      <Channel Fixture="65">2</Channel>
+      <Channel Fixture="66">2</Channel>
+      <Channel Fixture="67">2</Channel>
+      <Channel Fixture="68">2</Channel>
+      <Channel Fixture="69">2</Channel>
+      <Channel Fixture="70">2</Channel>
+      <Channel Fixture="71">2</Channel>
+      <Channel Fixture="72">2</Channel>
+      <Channel Fixture="73">2</Channel>
+      <Channel Fixture="74">2</Channel>
+      <Channel Fixture="75">2</Channel>
+      <Channel Fixture="76">2</Channel>
+      <Channel Fixture="77">2</Channel>
+      <Channel Fixture="78">2</Channel>
+      <Channel Fixture="79">2</Channel>
+      <Channel Fixture="80">2</Channel>
+      <Channel Fixture="81">2</Channel>
+      <Channel Fixture="82">2</Channel>
+      <Channel Fixture="83">2</Channel>
+      <Channel Fixture="84">2</Channel>
+      <Channel Fixture="85">2</Channel>
+      <Channel Fixture="86">2</Channel>
+      <Channel Fixture="87">2</Channel>
+      <Channel Fixture="88">2</Channel>
+      <Channel Fixture="89">2</Channel>
+      <Channel Fixture="90">2</Channel>
+      <Channel Fixture="91">2</Channel>
+      <Channel Fixture="92">2</Channel>
+      <Channel Fixture="93">2</Channel>
+      <Channel Fixture="94">2</Channel>
+      <Channel Fixture="95">2</Channel>
+      <Channel Fixture="96">2</Channel>
+      <Channel Fixture="97">2</Channel>
+      <Channel Fixture="98">2</Channel>
+      <Channel Fixture="99">2</Channel>
+      <Channel Fixture="100">2</Channel>
+      <Channel Fixture="101">2</Channel>
+      <Channel Fixture="102">2</Channel>
+      <Channel Fixture="103">2</Channel>
+      <Channel Fixture="104">2</Channel>
+      <Channel Fixture="105">2</Channel>
+      <Channel Fixture="106">2</Channel>
+      <Channel Fixture="107">2</Channel>
+      <Channel Fixture="108">2</Channel>
+      <Channel Fixture="109">2</Channel>
+      <Channel Fixture="110">2</Channel>
+      <Channel Fixture="111">2</Channel>
+     </Level>
+     <Playback>
+      <Function>4294967295</Function>
+     </Playback>
+    </Slider>
+    <Slider WidgetStyle="Slider" Caption="Green" InvertedAppearance="false">
+     <WindowState Width="60" X="60" Y="35" Height="200" Visible="True"/>
+     <Appearance>
+      <FrameStyle>Sunken</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <SliderMode ValueDisplayStyle="Percentage" ClickAndGoType="None">Level</SliderMode>
+     <Level HighLimit="255" LowLimit="0" Value="0">
+      <Channel Fixture="0">1</Channel>
+      <Channel Fixture="1">1</Channel>
+      <Channel Fixture="2">1</Channel>
+      <Channel Fixture="3">1</Channel>
+      <Channel Fixture="4">1</Channel>
+      <Channel Fixture="5">1</Channel>
+      <Channel Fixture="6">1</Channel>
+      <Channel Fixture="7">1</Channel>
+      <Channel Fixture="8">1</Channel>
+      <Channel Fixture="9">1</Channel>
+      <Channel Fixture="10">1</Channel>
+      <Channel Fixture="11">1</Channel>
+      <Channel Fixture="12">1</Channel>
+      <Channel Fixture="13">1</Channel>
+      <Channel Fixture="14">1</Channel>
+      <Channel Fixture="15">1</Channel>
+      <Channel Fixture="16">1</Channel>
+      <Channel Fixture="17">1</Channel>
+      <Channel Fixture="18">1</Channel>
+      <Channel Fixture="19">1</Channel>
+      <Channel Fixture="20">1</Channel>
+      <Channel Fixture="21">1</Channel>
+      <Channel Fixture="22">1</Channel>
+      <Channel Fixture="23">1</Channel>
+      <Channel Fixture="24">1</Channel>
+      <Channel Fixture="25">1</Channel>
+      <Channel Fixture="26">1</Channel>
+      <Channel Fixture="27">1</Channel>
+      <Channel Fixture="28">1</Channel>
+      <Channel Fixture="29">1</Channel>
+      <Channel Fixture="30">1</Channel>
+      <Channel Fixture="31">1</Channel>
+      <Channel Fixture="32">1</Channel>
+      <Channel Fixture="33">1</Channel>
+      <Channel Fixture="34">1</Channel>
+      <Channel Fixture="35">1</Channel>
+      <Channel Fixture="36">1</Channel>
+      <Channel Fixture="37">1</Channel>
+      <Channel Fixture="38">1</Channel>
+      <Channel Fixture="39">1</Channel>
+      <Channel Fixture="40">1</Channel>
+      <Channel Fixture="41">1</Channel>
+      <Channel Fixture="42">1</Channel>
+      <Channel Fixture="43">1</Channel>
+      <Channel Fixture="44">1</Channel>
+      <Channel Fixture="45">1</Channel>
+      <Channel Fixture="46">1</Channel>
+      <Channel Fixture="47">1</Channel>
+      <Channel Fixture="48">1</Channel>
+      <Channel Fixture="49">1</Channel>
+      <Channel Fixture="50">1</Channel>
+      <Channel Fixture="51">1</Channel>
+      <Channel Fixture="52">1</Channel>
+      <Channel Fixture="53">1</Channel>
+      <Channel Fixture="54">1</Channel>
+      <Channel Fixture="55">1</Channel>
+      <Channel Fixture="56">1</Channel>
+      <Channel Fixture="57">1</Channel>
+      <Channel Fixture="58">1</Channel>
+      <Channel Fixture="59">1</Channel>
+      <Channel Fixture="60">1</Channel>
+      <Channel Fixture="61">1</Channel>
+      <Channel Fixture="62">1</Channel>
+      <Channel Fixture="63">1</Channel>
+      <Channel Fixture="64">1</Channel>
+      <Channel Fixture="65">1</Channel>
+      <Channel Fixture="66">1</Channel>
+      <Channel Fixture="67">1</Channel>
+      <Channel Fixture="68">1</Channel>
+      <Channel Fixture="69">1</Channel>
+      <Channel Fixture="70">1</Channel>
+      <Channel Fixture="71">1</Channel>
+      <Channel Fixture="72">1</Channel>
+      <Channel Fixture="73">1</Channel>
+      <Channel Fixture="74">1</Channel>
+      <Channel Fixture="75">1</Channel>
+      <Channel Fixture="76">1</Channel>
+      <Channel Fixture="77">1</Channel>
+      <Channel Fixture="78">1</Channel>
+      <Channel Fixture="79">1</Channel>
+      <Channel Fixture="80">1</Channel>
+      <Channel Fixture="81">1</Channel>
+      <Channel Fixture="82">1</Channel>
+      <Channel Fixture="83">1</Channel>
+      <Channel Fixture="84">1</Channel>
+      <Channel Fixture="85">1</Channel>
+      <Channel Fixture="86">1</Channel>
+      <Channel Fixture="87">1</Channel>
+      <Channel Fixture="88">1</Channel>
+      <Channel Fixture="89">1</Channel>
+      <Channel Fixture="90">1</Channel>
+      <Channel Fixture="91">1</Channel>
+      <Channel Fixture="92">1</Channel>
+      <Channel Fixture="93">1</Channel>
+      <Channel Fixture="94">1</Channel>
+      <Channel Fixture="95">1</Channel>
+      <Channel Fixture="96">1</Channel>
+      <Channel Fixture="97">1</Channel>
+      <Channel Fixture="98">1</Channel>
+      <Channel Fixture="99">1</Channel>
+      <Channel Fixture="100">1</Channel>
+      <Channel Fixture="101">1</Channel>
+      <Channel Fixture="102">1</Channel>
+      <Channel Fixture="103">1</Channel>
+      <Channel Fixture="104">1</Channel>
+      <Channel Fixture="105">1</Channel>
+      <Channel Fixture="106">1</Channel>
+      <Channel Fixture="107">1</Channel>
+      <Channel Fixture="108">1</Channel>
+      <Channel Fixture="109">1</Channel>
+      <Channel Fixture="110">1</Channel>
+      <Channel Fixture="111">1</Channel>
+     </Level>
+     <Playback>
+      <Function>4294967295</Function>
+     </Playback>
+    </Slider>
+   </Frame>
+   <Frame Caption="Cyc (P Half)">
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <WindowState Width="195" X="195" Y="0" Height="250" Visible="True"/>
+    <AllowChildren>True</AllowChildren>
+    <AllowResize>True</AllowResize>
+    <ShowHeader>True</ShowHeader>
+    <Collapsed>False</Collapsed>
+    <Slider WidgetStyle="Slider" Caption="Red" InvertedAppearance="false">
+     <WindowState Width="60" X="0" Y="35" Height="200" Visible="True"/>
+     <Appearance>
+      <FrameStyle>Sunken</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <SliderMode ValueDisplayStyle="Percentage" ClickAndGoType="None">Level</SliderMode>
+     <Level HighLimit="255" LowLimit="0" Value="0">
+      <Channel Fixture="0">0</Channel>
+      <Channel Fixture="1">0</Channel>
+      <Channel Fixture="2">0</Channel>
+      <Channel Fixture="3">0</Channel>
+      <Channel Fixture="4">0</Channel>
+      <Channel Fixture="5">0</Channel>
+      <Channel Fixture="6">0</Channel>
+      <Channel Fixture="7">0</Channel>
+      <Channel Fixture="8">0</Channel>
+      <Channel Fixture="9">0</Channel>
+      <Channel Fixture="10">0</Channel>
+      <Channel Fixture="11">0</Channel>
+      <Channel Fixture="12">0</Channel>
+      <Channel Fixture="13">0</Channel>
+      <Channel Fixture="14">0</Channel>
+      <Channel Fixture="15">0</Channel>
+      <Channel Fixture="16">0</Channel>
+      <Channel Fixture="17">0</Channel>
+      <Channel Fixture="18">0</Channel>
+      <Channel Fixture="19">0</Channel>
+      <Channel Fixture="20">0</Channel>
+      <Channel Fixture="21">0</Channel>
+      <Channel Fixture="22">0</Channel>
+      <Channel Fixture="23">0</Channel>
+      <Channel Fixture="24">0</Channel>
+      <Channel Fixture="25">0</Channel>
+      <Channel Fixture="26">0</Channel>
+      <Channel Fixture="27">0</Channel>
+      <Channel Fixture="28">0</Channel>
+      <Channel Fixture="29">0</Channel>
+      <Channel Fixture="30">0</Channel>
+      <Channel Fixture="31">0</Channel>
+      <Channel Fixture="32">0</Channel>
+      <Channel Fixture="33">0</Channel>
+      <Channel Fixture="34">0</Channel>
+      <Channel Fixture="35">0</Channel>
+      <Channel Fixture="36">0</Channel>
+      <Channel Fixture="37">0</Channel>
+      <Channel Fixture="38">0</Channel>
+      <Channel Fixture="39">0</Channel>
+      <Channel Fixture="40">0</Channel>
+      <Channel Fixture="41">0</Channel>
+      <Channel Fixture="42">0</Channel>
+      <Channel Fixture="43">0</Channel>
+      <Channel Fixture="44">0</Channel>
+      <Channel Fixture="45">0</Channel>
+      <Channel Fixture="46">0</Channel>
+      <Channel Fixture="47">0</Channel>
+      <Channel Fixture="48">0</Channel>
+      <Channel Fixture="49">0</Channel>
+      <Channel Fixture="50">0</Channel>
+      <Channel Fixture="51">0</Channel>
+      <Channel Fixture="52">0</Channel>
+      <Channel Fixture="53">0</Channel>
+      <Channel Fixture="54">0</Channel>
+      <Channel Fixture="55">0</Channel>
+     </Level>
+     <Playback>
+      <Function>4294967295</Function>
+     </Playback>
+    </Slider>
+    <Slider WidgetStyle="Slider" Caption="Blue" InvertedAppearance="false">
+     <WindowState Width="60" X="120" Y="35" Height="200" Visible="True"/>
+     <Appearance>
+      <FrameStyle>Sunken</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <SliderMode ValueDisplayStyle="Percentage" ClickAndGoType="None">Level</SliderMode>
+     <Level HighLimit="255" LowLimit="0" Value="0">
+      <Channel Fixture="0">2</Channel>
+      <Channel Fixture="1">2</Channel>
+      <Channel Fixture="2">2</Channel>
+      <Channel Fixture="3">2</Channel>
+      <Channel Fixture="4">2</Channel>
+      <Channel Fixture="5">2</Channel>
+      <Channel Fixture="6">2</Channel>
+      <Channel Fixture="7">2</Channel>
+      <Channel Fixture="8">2</Channel>
+      <Channel Fixture="9">2</Channel>
+      <Channel Fixture="10">2</Channel>
+      <Channel Fixture="11">2</Channel>
+      <Channel Fixture="12">2</Channel>
+      <Channel Fixture="13">2</Channel>
+      <Channel Fixture="14">2</Channel>
+      <Channel Fixture="15">2</Channel>
+      <Channel Fixture="16">2</Channel>
+      <Channel Fixture="17">2</Channel>
+      <Channel Fixture="18">2</Channel>
+      <Channel Fixture="19">2</Channel>
+      <Channel Fixture="20">2</Channel>
+      <Channel Fixture="21">2</Channel>
+      <Channel Fixture="22">2</Channel>
+      <Channel Fixture="23">2</Channel>
+      <Channel Fixture="24">2</Channel>
+      <Channel Fixture="25">2</Channel>
+      <Channel Fixture="26">2</Channel>
+      <Channel Fixture="27">2</Channel>
+      <Channel Fixture="28">2</Channel>
+      <Channel Fixture="29">2</Channel>
+      <Channel Fixture="30">2</Channel>
+      <Channel Fixture="31">2</Channel>
+      <Channel Fixture="32">2</Channel>
+      <Channel Fixture="33">2</Channel>
+      <Channel Fixture="34">2</Channel>
+      <Channel Fixture="35">2</Channel>
+      <Channel Fixture="36">2</Channel>
+      <Channel Fixture="37">2</Channel>
+      <Channel Fixture="38">2</Channel>
+      <Channel Fixture="39">2</Channel>
+      <Channel Fixture="40">2</Channel>
+      <Channel Fixture="41">2</Channel>
+      <Channel Fixture="42">2</Channel>
+      <Channel Fixture="43">2</Channel>
+      <Channel Fixture="44">2</Channel>
+      <Channel Fixture="45">2</Channel>
+      <Channel Fixture="46">2</Channel>
+      <Channel Fixture="47">2</Channel>
+      <Channel Fixture="48">2</Channel>
+      <Channel Fixture="49">2</Channel>
+      <Channel Fixture="50">2</Channel>
+      <Channel Fixture="51">2</Channel>
+      <Channel Fixture="52">2</Channel>
+      <Channel Fixture="53">2</Channel>
+      <Channel Fixture="54">2</Channel>
+      <Channel Fixture="55">2</Channel>
+     </Level>
+     <Playback>
+      <Function>4294967295</Function>
+     </Playback>
+    </Slider>
+    <Slider WidgetStyle="Slider" Caption="Green" InvertedAppearance="false">
+     <WindowState Width="60" X="60" Y="35" Height="200" Visible="True"/>
+     <Appearance>
+      <FrameStyle>Sunken</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <SliderMode ValueDisplayStyle="Percentage" ClickAndGoType="None">Level</SliderMode>
+     <Level HighLimit="255" LowLimit="0" Value="0">
+      <Channel Fixture="0">1</Channel>
+      <Channel Fixture="1">1</Channel>
+      <Channel Fixture="2">1</Channel>
+      <Channel Fixture="3">1</Channel>
+      <Channel Fixture="4">1</Channel>
+      <Channel Fixture="5">1</Channel>
+      <Channel Fixture="6">1</Channel>
+      <Channel Fixture="7">1</Channel>
+      <Channel Fixture="8">1</Channel>
+      <Channel Fixture="9">1</Channel>
+      <Channel Fixture="10">1</Channel>
+      <Channel Fixture="11">1</Channel>
+      <Channel Fixture="12">1</Channel>
+      <Channel Fixture="13">1</Channel>
+      <Channel Fixture="14">1</Channel>
+      <Channel Fixture="15">1</Channel>
+      <Channel Fixture="16">1</Channel>
+      <Channel Fixture="17">1</Channel>
+      <Channel Fixture="18">1</Channel>
+      <Channel Fixture="19">1</Channel>
+      <Channel Fixture="20">1</Channel>
+      <Channel Fixture="21">1</Channel>
+      <Channel Fixture="22">1</Channel>
+      <Channel Fixture="23">1</Channel>
+      <Channel Fixture="24">1</Channel>
+      <Channel Fixture="25">1</Channel>
+      <Channel Fixture="26">1</Channel>
+      <Channel Fixture="27">1</Channel>
+      <Channel Fixture="28">1</Channel>
+      <Channel Fixture="29">1</Channel>
+      <Channel Fixture="30">1</Channel>
+      <Channel Fixture="31">1</Channel>
+      <Channel Fixture="32">1</Channel>
+      <Channel Fixture="33">1</Channel>
+      <Channel Fixture="34">1</Channel>
+      <Channel Fixture="35">1</Channel>
+      <Channel Fixture="36">1</Channel>
+      <Channel Fixture="37">1</Channel>
+      <Channel Fixture="38">1</Channel>
+      <Channel Fixture="39">1</Channel>
+      <Channel Fixture="40">1</Channel>
+      <Channel Fixture="41">1</Channel>
+      <Channel Fixture="42">1</Channel>
+      <Channel Fixture="43">1</Channel>
+      <Channel Fixture="44">1</Channel>
+      <Channel Fixture="45">1</Channel>
+      <Channel Fixture="46">1</Channel>
+      <Channel Fixture="47">1</Channel>
+      <Channel Fixture="48">1</Channel>
+      <Channel Fixture="49">1</Channel>
+      <Channel Fixture="50">1</Channel>
+      <Channel Fixture="51">1</Channel>
+      <Channel Fixture="52">1</Channel>
+      <Channel Fixture="53">1</Channel>
+      <Channel Fixture="54">1</Channel>
+      <Channel Fixture="55">1</Channel>
+     </Level>
+     <Playback>
+      <Function>4294967295</Function>
+     </Playback>
+    </Slider>
+   </Frame>
+   <Frame Caption="Cyc (OP Half)">
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <WindowState Width="195" X="390" Y="0" Height="250" Visible="True"/>
+    <AllowChildren>True</AllowChildren>
+    <AllowResize>True</AllowResize>
+    <ShowHeader>True</ShowHeader>
+    <Collapsed>False</Collapsed>
+    <Slider WidgetStyle="Slider" Caption="Red" InvertedAppearance="false">
+     <WindowState Width="60" X="0" Y="35" Height="200" Visible="True"/>
+     <Appearance>
+      <FrameStyle>Sunken</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <SliderMode ValueDisplayStyle="Percentage" ClickAndGoType="None">Level</SliderMode>
+     <Level HighLimit="255" LowLimit="0" Value="0">
+      <Channel Fixture="56">0</Channel>
+      <Channel Fixture="57">0</Channel>
+      <Channel Fixture="58">0</Channel>
+      <Channel Fixture="59">0</Channel>
+      <Channel Fixture="60">0</Channel>
+      <Channel Fixture="61">0</Channel>
+      <Channel Fixture="62">0</Channel>
+      <Channel Fixture="63">0</Channel>
+      <Channel Fixture="64">0</Channel>
+      <Channel Fixture="65">0</Channel>
+      <Channel Fixture="66">0</Channel>
+      <Channel Fixture="67">0</Channel>
+      <Channel Fixture="68">0</Channel>
+      <Channel Fixture="69">0</Channel>
+      <Channel Fixture="70">0</Channel>
+      <Channel Fixture="71">0</Channel>
+      <Channel Fixture="72">0</Channel>
+      <Channel Fixture="73">0</Channel>
+      <Channel Fixture="74">0</Channel>
+      <Channel Fixture="75">0</Channel>
+      <Channel Fixture="76">0</Channel>
+      <Channel Fixture="77">0</Channel>
+      <Channel Fixture="78">0</Channel>
+      <Channel Fixture="79">0</Channel>
+      <Channel Fixture="80">0</Channel>
+      <Channel Fixture="81">0</Channel>
+      <Channel Fixture="82">0</Channel>
+      <Channel Fixture="83">0</Channel>
+      <Channel Fixture="84">0</Channel>
+      <Channel Fixture="85">0</Channel>
+      <Channel Fixture="86">0</Channel>
+      <Channel Fixture="87">0</Channel>
+      <Channel Fixture="88">0</Channel>
+      <Channel Fixture="89">0</Channel>
+      <Channel Fixture="90">0</Channel>
+      <Channel Fixture="91">0</Channel>
+      <Channel Fixture="92">0</Channel>
+      <Channel Fixture="93">0</Channel>
+      <Channel Fixture="94">0</Channel>
+      <Channel Fixture="95">0</Channel>
+      <Channel Fixture="96">0</Channel>
+      <Channel Fixture="97">0</Channel>
+      <Channel Fixture="98">0</Channel>
+      <Channel Fixture="99">0</Channel>
+      <Channel Fixture="100">0</Channel>
+      <Channel Fixture="101">0</Channel>
+      <Channel Fixture="102">0</Channel>
+      <Channel Fixture="103">0</Channel>
+      <Channel Fixture="104">0</Channel>
+      <Channel Fixture="105">0</Channel>
+      <Channel Fixture="106">0</Channel>
+      <Channel Fixture="107">0</Channel>
+      <Channel Fixture="108">0</Channel>
+      <Channel Fixture="109">0</Channel>
+      <Channel Fixture="110">0</Channel>
+      <Channel Fixture="111">0</Channel>
+     </Level>
+     <Playback>
+      <Function>4294967295</Function>
+     </Playback>
+    </Slider>
+    <Slider WidgetStyle="Slider" Caption="Blue" InvertedAppearance="false">
+     <WindowState Width="60" X="120" Y="35" Height="200" Visible="True"/>
+     <Appearance>
+      <FrameStyle>Sunken</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <SliderMode ValueDisplayStyle="Percentage" ClickAndGoType="None">Level</SliderMode>
+     <Level HighLimit="255" LowLimit="0" Value="0">
+      <Channel Fixture="56">2</Channel>
+      <Channel Fixture="57">2</Channel>
+      <Channel Fixture="58">2</Channel>
+      <Channel Fixture="59">2</Channel>
+      <Channel Fixture="60">2</Channel>
+      <Channel Fixture="61">2</Channel>
+      <Channel Fixture="62">2</Channel>
+      <Channel Fixture="63">2</Channel>
+      <Channel Fixture="64">2</Channel>
+      <Channel Fixture="65">2</Channel>
+      <Channel Fixture="66">2</Channel>
+      <Channel Fixture="67">2</Channel>
+      <Channel Fixture="68">2</Channel>
+      <Channel Fixture="69">2</Channel>
+      <Channel Fixture="70">2</Channel>
+      <Channel Fixture="71">2</Channel>
+      <Channel Fixture="72">2</Channel>
+      <Channel Fixture="73">2</Channel>
+      <Channel Fixture="74">2</Channel>
+      <Channel Fixture="75">2</Channel>
+      <Channel Fixture="76">2</Channel>
+      <Channel Fixture="77">2</Channel>
+      <Channel Fixture="78">2</Channel>
+      <Channel Fixture="79">2</Channel>
+      <Channel Fixture="80">2</Channel>
+      <Channel Fixture="81">2</Channel>
+      <Channel Fixture="82">2</Channel>
+      <Channel Fixture="83">2</Channel>
+      <Channel Fixture="84">2</Channel>
+      <Channel Fixture="85">2</Channel>
+      <Channel Fixture="86">2</Channel>
+      <Channel Fixture="87">2</Channel>
+      <Channel Fixture="88">2</Channel>
+      <Channel Fixture="89">2</Channel>
+      <Channel Fixture="90">2</Channel>
+      <Channel Fixture="91">2</Channel>
+      <Channel Fixture="92">2</Channel>
+      <Channel Fixture="93">2</Channel>
+      <Channel Fixture="94">2</Channel>
+      <Channel Fixture="95">2</Channel>
+      <Channel Fixture="96">2</Channel>
+      <Channel Fixture="97">2</Channel>
+      <Channel Fixture="98">2</Channel>
+      <Channel Fixture="99">2</Channel>
+      <Channel Fixture="100">2</Channel>
+      <Channel Fixture="101">2</Channel>
+      <Channel Fixture="102">2</Channel>
+      <Channel Fixture="103">2</Channel>
+      <Channel Fixture="104">2</Channel>
+      <Channel Fixture="105">2</Channel>
+      <Channel Fixture="106">2</Channel>
+      <Channel Fixture="107">2</Channel>
+      <Channel Fixture="108">2</Channel>
+      <Channel Fixture="109">2</Channel>
+      <Channel Fixture="110">2</Channel>
+      <Channel Fixture="111">2</Channel>
+     </Level>
+     <Playback>
+      <Function>4294967295</Function>
+     </Playback>
+    </Slider>
+    <Slider WidgetStyle="Slider" Caption="Green" InvertedAppearance="false">
+     <WindowState Width="60" X="60" Y="35" Height="200" Visible="True"/>
+     <Appearance>
+      <FrameStyle>Sunken</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <SliderMode ValueDisplayStyle="Percentage" ClickAndGoType="None">Level</SliderMode>
+     <Level HighLimit="255" LowLimit="0" Value="0">
+      <Channel Fixture="56">1</Channel>
+      <Channel Fixture="57">1</Channel>
+      <Channel Fixture="58">1</Channel>
+      <Channel Fixture="59">1</Channel>
+      <Channel Fixture="60">1</Channel>
+      <Channel Fixture="61">1</Channel>
+      <Channel Fixture="62">1</Channel>
+      <Channel Fixture="63">1</Channel>
+      <Channel Fixture="64">1</Channel>
+      <Channel Fixture="65">1</Channel>
+      <Channel Fixture="66">1</Channel>
+      <Channel Fixture="67">1</Channel>
+      <Channel Fixture="68">1</Channel>
+      <Channel Fixture="69">1</Channel>
+      <Channel Fixture="70">1</Channel>
+      <Channel Fixture="71">1</Channel>
+      <Channel Fixture="72">1</Channel>
+      <Channel Fixture="73">1</Channel>
+      <Channel Fixture="74">1</Channel>
+      <Channel Fixture="75">1</Channel>
+      <Channel Fixture="76">1</Channel>
+      <Channel Fixture="77">1</Channel>
+      <Channel Fixture="78">1</Channel>
+      <Channel Fixture="79">1</Channel>
+      <Channel Fixture="80">1</Channel>
+      <Channel Fixture="81">1</Channel>
+      <Channel Fixture="82">1</Channel>
+      <Channel Fixture="83">1</Channel>
+      <Channel Fixture="84">1</Channel>
+      <Channel Fixture="85">1</Channel>
+      <Channel Fixture="86">1</Channel>
+      <Channel Fixture="87">1</Channel>
+      <Channel Fixture="88">1</Channel>
+      <Channel Fixture="89">1</Channel>
+      <Channel Fixture="90">1</Channel>
+      <Channel Fixture="91">1</Channel>
+      <Channel Fixture="92">1</Channel>
+      <Channel Fixture="93">1</Channel>
+      <Channel Fixture="94">1</Channel>
+      <Channel Fixture="95">1</Channel>
+      <Channel Fixture="96">1</Channel>
+      <Channel Fixture="97">1</Channel>
+      <Channel Fixture="98">1</Channel>
+      <Channel Fixture="99">1</Channel>
+      <Channel Fixture="100">1</Channel>
+      <Channel Fixture="101">1</Channel>
+      <Channel Fixture="102">1</Channel>
+      <Channel Fixture="103">1</Channel>
+      <Channel Fixture="104">1</Channel>
+      <Channel Fixture="105">1</Channel>
+      <Channel Fixture="106">1</Channel>
+      <Channel Fixture="107">1</Channel>
+      <Channel Fixture="108">1</Channel>
+      <Channel Fixture="109">1</Channel>
+      <Channel Fixture="110">1</Channel>
+      <Channel Fixture="111">1</Channel>
+     </Level>
+     <Playback>
+      <Function>4294967295</Function>
+     </Playback>
+    </Slider>
+   </Frame>
+  </Frame>
+  <Properties>
+   <Size Width="1920" Height="1080"/>
+   <Keyboard TapModifier="67108864"/>
+   <GrandMaster SliderMode="Normal" ChannelMode="Intensity" ValueMode="Reduce"/>
+  </Properties>
+ </VirtualConsole>
+ <SimpleDesk>
+  <Engine/>
+ </SimpleDesk>
+</Workspace>
+
