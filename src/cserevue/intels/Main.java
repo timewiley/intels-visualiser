@@ -85,6 +85,9 @@ public class Main extends SimpleApplication implements ArtNetListener {
     }
     
     protected void setupWindow() {
+        // No Pause on loose focus
+        setPauseOnLostFocus(false);
+        
         // Ambient Light
         AmbientLight al = new AmbientLight();
         al.setColor(ColorRGBA.White.mult(0.5f));
