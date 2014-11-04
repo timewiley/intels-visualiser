@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class ArtNet extends Thread {
 
-    public static final String DEFAULT_ADDRESS  = "127.0.0.1";
+    public static final String DEFAULT_ADDRESS  = "192.168.0.2";//127.0.0.1";
     public static final int    DEFAULT_PORT     = 6454;
     public static final int    BUFFER_SIZE      = 1024;
     private static final int   SOCKET_TIMEOUT   = (int) 1.0 * 1000;

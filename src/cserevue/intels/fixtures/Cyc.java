@@ -34,6 +34,7 @@ public class Cyc extends Fixture {
     
     // Colour blending
     private static final int COLOUR_WINDOW  = 10;
+    private static final int WINDOW_NORM    = 1 + (COLOUR_WINDOW * 2);
     
     // Cyc Mesh
     private Mesh cycMesh;
@@ -103,12 +104,13 @@ public class Cyc extends Fixture {
         cyc.setLocalTranslation(-ScienceTheatre.STAGE_WIDTH / 2, ScienceTheatre.STAGE_FLOOR_HEIGHT, -ScienceTheatre.STAGE_DEPTH / 2 + ScienceTheatre.CURTAIN_WIDTH / 2);
 
         // Configure Cyc Material
-        cycMat = new Material(assetManager, ScienceTheatre.MAT_LIGHTING);
-        cycMat.setBoolean("VertexLighting", true);
-        cycMat.setBoolean("UseVertexColor", true);
-        cycMat.setBoolean("UseMaterialColors", true);
-        cycMat.setColor("Ambient", ColorRGBA.White);
-        cycMat.setColor("Diffuse", ColorRGBA.White);
+        cycMat = new Material(assetManager, ScienceTheatre.MAT_UNSHADED);
+        //cycMat.setBoolean("VertexLighting", true);
+        //cycMat.setBoolean("UseVertexColor", true);
+        cycMat.setBoolean("VertexColor", true);
+        //cycMat.setBoolean("UseMaterialColors", true);
+        //cycMat.setColor("Ambient", ColorRGBA.White.mult(1.0f));
+        //cycMat.setColor("Diffuse", ColorRGBA.White);
         //cycMat.setFloat("Shininess", 100f);
         cyc.setMaterial(cycMat);
 
@@ -122,13 +124,9 @@ public class Cyc extends Fixture {
         for (int i = 0; i < N_VERTICIES; i++) {
             colourIndex = i * 4;
 
-            // Red value
-            vertexColours[colourIndex] = 2.0f;
-            // Green value
+            vertexColours[colourIndex] = 1.0f;
             vertexColours[colourIndex + 1] = 1.0f;
-            // Blue value
             vertexColours[colourIndex + 2] = 1.0f;
-            // Alpha value
             vertexColours[colourIndex + 3] = 1.0f;
         }
 
@@ -147,30 +145,35 @@ public class Cyc extends Fixture {
         
         synchronized(this) {
             // Colours for blending
-            float r = 0, g = 0, b = 0;
+            Vector3f rgb = new Vector3f();//(0.5f, 0.5f, 0.5f);
             
             // Set initial colours
             int dmxOffset = 0;
             int forwardAddr = 0;
             int backAddr = 0;
-            r = (COLOUR_WINDOW + 1) * dmx.getValueFloat(address);
-            g = (COLOUR_WINDOW + 1) * dmx.getValueFloat(address + 1);
-            b = (COLOUR_WINDOW + 1) * dmx.getValueFloat(address + 2);
+            int colourScale = 1;
+            rgb.x += (COLOUR_WINDOW + 1) * dmx.getValueFloat(address);
+            rgb.y += (COLOUR_WINDOW + 1) * dmx.getValueFloat(address + 1);
+            rgb.z += (COLOUR_WINDOW + 1) * dmx.getValueFloat(address + 2);
             for (int i = 0; i != COLOUR_WINDOW; ++i) {
                 dmxOffset = calcDMXOffset(address, i + 1);
-                r += dmx.getValueFloat(dmxOffset);
-                g += dmx.getValueFloat(dmxOffset + 1);
-                b += dmx.getValueFloat(dmxOffset + 2);
+                rgb.x += dmx.getValueFloat(dmxOffset);
+                rgb.y += dmx.getValueFloat(dmxOffset + 1);
+                rgb.z += dmx.getValueFloat(dmxOffset + 2);
             }
+            //float whiteAdjust = 0.2f * WINDOW_NORM;
+            //r += whiteAdjust;
+            //g += whiteAdjust;
+            //b += whiteAdjust;
             
             // Set the first vertex colours & first light (rgba)
             int colourIndex = 0;
-            int divisor = 1 + (COLOUR_WINDOW * 2);
+            Vector3f norm = rgb.normalize();
             for (int i = 0; i != 2; ++i) {
                 colourIndex = i * 8;
-                vertexColours[colourIndex]     = 2 * r / divisor;
-                vertexColours[colourIndex + 1] = 2 * g / divisor;
-                vertexColours[colourIndex + 2] = 2 * b / divisor;
+                vertexColours[colourIndex]     = colourScale * norm.x;
+                vertexColours[colourIndex + 1] = colourScale * norm.y;
+                vertexColours[colourIndex + 2] = colourScale * norm.z;
                 vertexColours[colourIndex + 3] = 1.0f;
                 vertexColours[colourIndex + 4] = vertexColours[colourIndex];
                 vertexColours[colourIndex + 5] = vertexColours[colourIndex + 1];
@@ -178,6 +181,7 @@ public class Cyc extends Fixture {
                 vertexColours[colourIndex + 7] = vertexColours[colourIndex + 3];
             }
             //System.out.println("Cyc: " + r + ", " + g + ", " + b);
+            System.out.println("Cyc: " + norm.x + ", " + norm.y + ", " + norm.z);
 
             // Set custom RGBA value for each Vertex. Values range from 0.0f to 1.0f    
             for (int i = 1; i != N_LIGHTS; i++) {
@@ -186,22 +190,25 @@ public class Cyc extends Fixture {
                 // Add next colour for window size (leading edge of window)
                 forwardAddr = Math.min(i + COLOUR_WINDOW, N_LIGHTS - 1);
                 dmxOffset = calcDMXOffset(address, forwardAddr);
-                r += dmx.getValueFloat(dmxOffset);
-                g += dmx.getValueFloat(dmxOffset + 1);
-                b += dmx.getValueFloat(dmxOffset + 2);
+                rgb.x += dmx.getValueFloat(dmxOffset);
+                rgb.y += dmx.getValueFloat(dmxOffset + 1);
+                rgb.z += dmx.getValueFloat(dmxOffset + 2);
                 
                 // Remove previous colour for window (-1 from trailing edge of window)
                 backAddr = Math.max(0, i - COLOUR_WINDOW - 1);
                 dmxOffset = calcDMXOffset(address, backAddr);
-                r -= dmx.getValueFloat(dmxOffset);
-                g -= dmx.getValueFloat(dmxOffset + 1);
-                b -= dmx.getValueFloat(dmxOffset + 2);
+                rgb.x -= dmx.getValueFloat(dmxOffset);
+                rgb.y -= dmx.getValueFloat(dmxOffset + 1);
+                rgb.z -= dmx.getValueFloat(dmxOffset + 2);
                 //System.out.println("Cyc: " + r + ", " + g + ", " + b);
                 
+                norm = rgb.normalize();
+                System.out.println("Cyc: " + norm.x + ", " + norm.y + ", " + norm.z);
+                
                 // Bottom Vertex (rgba)
-                vertexColours[colourIndex]     = 2 * r / divisor;
-                vertexColours[colourIndex + 1] = 2 * g / divisor;
-                vertexColours[colourIndex + 2] = 2 * b / divisor;
+                vertexColours[colourIndex]     = colourScale * norm.x;
+                vertexColours[colourIndex + 1] = colourScale * norm.y;
+                vertexColours[colourIndex + 2] = colourScale * norm.z;
                 vertexColours[colourIndex + 3] = 1.0f;
 
                 // Top Vertex
@@ -212,11 +219,10 @@ public class Cyc extends Fixture {
             }
 
             // Set the end vertex colours
-            dmxOffset = address + ((N_LIGHTS-1) * N_CHANNELS);
-            vertexColours[vertexColours.length - 8] = 2 * dmx.getValueFloat(dmxOffset);
-            vertexColours[vertexColours.length - 7] = 2 * dmx.getValueFloat(dmxOffset + 1);
-            vertexColours[vertexColours.length - 6] = 2 * dmx.getValueFloat(dmxOffset + 2);
-            vertexColours[vertexColours.length - 5] = 1.0f;
+            vertexColours[vertexColours.length - 8] = vertexColours[vertexColours.length - 12];
+            vertexColours[vertexColours.length - 7] = vertexColours[vertexColours.length - 11];
+            vertexColours[vertexColours.length - 6] = vertexColours[vertexColours.length - 10];
+            vertexColours[vertexColours.length - 5] = vertexColours[vertexColours.length - 9];
             vertexColours[vertexColours.length - 4] = vertexColours[vertexColours.length - 8];
             vertexColours[vertexColours.length - 3] = vertexColours[vertexColours.length - 7];
             vertexColours[vertexColours.length - 2] = vertexColours[vertexColours.length - 6];
