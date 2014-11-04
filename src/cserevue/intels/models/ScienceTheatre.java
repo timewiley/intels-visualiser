@@ -321,11 +321,12 @@ public class ScienceTheatre implements Model, FixtureList {
         
         // TODO - Remove
         DMXPacketTest dmx = new DMXPacketTest(1, 1, (byte) 255);
-        dmx.fill(ColorRGBA.Blue, PAR_DMX_START, 18, PAR_DMX_NADDRS);
+        dmx.fill(ColorRGBA.Green, PAR_DMX_START, 18, PAR_DMX_NADDRS);
         for (int i = 0; i != Cyc.N_LIGHTS; ++i) {
             float value = (1.0f / Cyc.N_LIGHTS) * i;
-            int addr = Cyc.DMX_ADDR + i*3;
+            int addr = Cyc.DMX_ADDR + i*3 - 1;
             ColorRGBA colour = new ColorRGBA(1.0f, value, 0.0f, 1.0f);
+            System.out.println(addr + " " + colour);
             dmx.fill(colour, addr, 1);
         }
         //dmx.fill(ColorRGBA.Red, Cyc.DMX_ADDR, 30, Cyc.N_CHANNELS);
