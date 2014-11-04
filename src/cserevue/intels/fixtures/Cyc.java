@@ -25,27 +25,33 @@ public class Cyc extends Fixture {
 
     // DMX Properties
     public static final int DMX_ADDR      = 1;
+    public static final int DMX_UNIVERSE  = 1;
     public static final int N_CHANNELS    = 3;
-    public static final int UNIVERSE      = 1;
     
     // Ligh properties
     public static final int N_LIGHTS      = 112;
     public static final int N_VERTICIES   = 2 * (N_LIGHTS + 2);
     
+    // Colour blending
+    private static final int COLOUR_WINDOW  = 10;
+    
     // Cyc Mesh
-    Mesh cycMesh;
+    private Mesh cycMesh;
     
     // Cyc Geometry
-    Geometry cyc;
+    private Geometry cyc;
     
     // Cyc material
-    Material cycMat;
+    private Material cycMat;
     
     // Array for cyc vertex colours
-    float[] vertexColours;
+    private float[] vertexColours;
+    
+    // DMX controls
+    private boolean newDMXPacket = false;
 
     public Cyc(Node rootNode, AssetManager assetManager) {
-        super("Cyc", 1, 1);
+        super("Cyc", DMX_UNIVERSE, DMX_ADDR);
 
         // Construct custom Cyc Mesh
         cycMesh = new Mesh();
@@ -131,58 +137,107 @@ public class Cyc extends Fixture {
 
         // Attach to root Node
         rootNode.attachChild(cyc);
+        newDMXPacket = false;
     }
 
     @Override
     public void dmx_signal(DMXPacket dmx) {
-        if (dmx.getUniverse() != universe) { return; }
+        //System.out.println("Cyc dmx_signal: " + dmx.getUniverse());
+        if (dmx.getUniverse() != getUniverse()) { return; }
         
-        // Set the first vertex colours
-        vertexColours[0] = 2 * dmx.getValueFloat(address);
-        vertexColours[1] = 2 * dmx.getValueFloat(address + 1);
-        vertexColours[2] = 2 * dmx.getValueFloat(address + 2);
-        vertexColours[3] = 1.0f;
-        vertexColours[4] = vertexColours[0];
-        vertexColours[5] = vertexColours[1];
-        vertexColours[6] = vertexColours[2];
-        vertexColours[7] = vertexColours[3];
-        
-        // Set custom RGBA value for each Vertex. Values range from 0.0f to 1.0f
-        int colourIndex = 0;
-        int dmxOffset = 0;
-        for (int i = 1; i < N_LIGHTS + 1; i++) {
-            colourIndex = i * 8;
-            dmxOffset = address + ((i-1) * N_CHANNELS);
+        synchronized(this) {
+            // Colours for blending
+            float r = 0, g = 0, b = 0;
             
-            // Bottom Vertex
-            // Red value
-            vertexColours[colourIndex]     = 2 * dmx.getValueFloat(dmxOffset);
-            // Green value
-            vertexColours[colourIndex + 1] = 2 * dmx.getValueFloat(dmxOffset + 1);
-            // Blue value
-            vertexColours[colourIndex + 2] = 2 * dmx.getValueFloat(dmxOffset + 2);
-            // Alpha value
-            vertexColours[colourIndex + 3] = 1.0f;
+            // Set initial colours
+            int dmxOffset = 0;
+            int forwardAddr = 0;
+            int backAddr = 0;
+            r = (COLOUR_WINDOW + 1) * dmx.getValueFloat(address);
+            g = (COLOUR_WINDOW + 1) * dmx.getValueFloat(address + 1);
+            b = (COLOUR_WINDOW + 1) * dmx.getValueFloat(address + 2);
+            for (int i = 0; i != COLOUR_WINDOW; ++i) {
+                dmxOffset = calcDMXOffset(address, i + 1);
+                r += dmx.getValueFloat(dmxOffset);
+                g += dmx.getValueFloat(dmxOffset + 1);
+                b += dmx.getValueFloat(dmxOffset + 2);
+            }
             
-            // Top Vertex
-            vertexColours[colourIndex + 4] = vertexColours[colourIndex];
-            vertexColours[colourIndex + 5] = vertexColours[colourIndex + 1];
-            vertexColours[colourIndex + 6] = vertexColours[colourIndex + 2];
-            vertexColours[colourIndex + 7] = vertexColours[colourIndex + 3];
-        }
-        
-        // Set the end vertex colours
-        dmxOffset = address + ((N_LIGHTS-1) * N_CHANNELS);
-        vertexColours[vertexColours.length - 8] = 2 * dmx.getValueFloat(dmxOffset);
-        vertexColours[vertexColours.length - 7] = 2 * dmx.getValueFloat(dmxOffset + 1);
-        vertexColours[vertexColours.length - 6] = 2 * dmx.getValueFloat(dmxOffset + 2);
-        vertexColours[vertexColours.length - 5] = 1.0f;
-        vertexColours[vertexColours.length - 4] = vertexColours[vertexColours.length - 8];
-        vertexColours[vertexColours.length - 3] = vertexColours[vertexColours.length - 7];
-        vertexColours[vertexColours.length - 2] = vertexColours[vertexColours.length - 6];
-        vertexColours[vertexColours.length - 1] = vertexColours[vertexColours.length - 5];
+            // Set the first vertex colours & first light (rgba)
+            int colourIndex = 0;
+            int divisor = 1 + (COLOUR_WINDOW * 2);
+            for (int i = 0; i != 2; ++i) {
+                colourIndex = i * 8;
+                vertexColours[colourIndex]     = 2 * r / divisor;
+                vertexColours[colourIndex + 1] = 2 * g / divisor;
+                vertexColours[colourIndex + 2] = 2 * b / divisor;
+                vertexColours[colourIndex + 3] = 1.0f;
+                vertexColours[colourIndex + 4] = vertexColours[colourIndex];
+                vertexColours[colourIndex + 5] = vertexColours[colourIndex + 1];
+                vertexColours[colourIndex + 6] = vertexColours[colourIndex + 2];
+                vertexColours[colourIndex + 7] = vertexColours[colourIndex + 3];
+            }
+            //System.out.println("Cyc: " + r + ", " + g + ", " + b);
 
-        // Set the color buffer
-        cycMesh.setBuffer(VertexBuffer.Type.Color, 4, vertexColours);
+            // Set custom RGBA value for each Vertex. Values range from 0.0f to 1.0f    
+            for (int i = 1; i != N_LIGHTS; i++) {
+                colourIndex = (i + 1) * 8;
+                
+                // Add next colour for window size (leading edge of window)
+                forwardAddr = Math.min(i + COLOUR_WINDOW, N_LIGHTS - 1);
+                dmxOffset = calcDMXOffset(address, forwardAddr);
+                r += dmx.getValueFloat(dmxOffset);
+                g += dmx.getValueFloat(dmxOffset + 1);
+                b += dmx.getValueFloat(dmxOffset + 2);
+                
+                // Remove previous colour for window (-1 from trailing edge of window)
+                backAddr = Math.max(0, i - COLOUR_WINDOW - 1);
+                dmxOffset = calcDMXOffset(address, backAddr);
+                r -= dmx.getValueFloat(dmxOffset);
+                g -= dmx.getValueFloat(dmxOffset + 1);
+                b -= dmx.getValueFloat(dmxOffset + 2);
+                //System.out.println("Cyc: " + r + ", " + g + ", " + b);
+                
+                // Bottom Vertex (rgba)
+                vertexColours[colourIndex]     = 2 * r / divisor;
+                vertexColours[colourIndex + 1] = 2 * g / divisor;
+                vertexColours[colourIndex + 2] = 2 * b / divisor;
+                vertexColours[colourIndex + 3] = 1.0f;
+
+                // Top Vertex
+                vertexColours[colourIndex + 4] = vertexColours[colourIndex];
+                vertexColours[colourIndex + 5] = vertexColours[colourIndex + 1];
+                vertexColours[colourIndex + 6] = vertexColours[colourIndex + 2];
+                vertexColours[colourIndex + 7] = vertexColours[colourIndex + 3];
+            }
+
+            // Set the end vertex colours
+            dmxOffset = address + ((N_LIGHTS-1) * N_CHANNELS);
+            vertexColours[vertexColours.length - 8] = 2 * dmx.getValueFloat(dmxOffset);
+            vertexColours[vertexColours.length - 7] = 2 * dmx.getValueFloat(dmxOffset + 1);
+            vertexColours[vertexColours.length - 6] = 2 * dmx.getValueFloat(dmxOffset + 2);
+            vertexColours[vertexColours.length - 5] = 1.0f;
+            vertexColours[vertexColours.length - 4] = vertexColours[vertexColours.length - 8];
+            vertexColours[vertexColours.length - 3] = vertexColours[vertexColours.length - 7];
+            vertexColours[vertexColours.length - 2] = vertexColours[vertexColours.length - 6];
+            vertexColours[vertexColours.length - 1] = vertexColours[vertexColours.length - 5];
+            
+            newDMXPacket = true;
+        }
+    }
+    
+    private static int calcDMXOffset(int addr, int index) {
+        return addr + (index * N_CHANNELS);
+    }
+
+    @Override
+    public void controlUpdate(float tpf) {
+        if (newDMXPacket) {
+            synchronized(this) {
+                // Set the color buffer
+                cycMesh.setBuffer(VertexBuffer.Type.Color, 4, vertexColours);
+                newDMXPacket = false;
+            }
+        }
     }
 }
