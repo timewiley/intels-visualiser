@@ -52,7 +52,7 @@ public class Main extends SimpleApplication implements ArtNetListener {
         setupCameras();
         
         // Setup and enable ArtNet DMX
-        //setupArtNet();
+        setupArtNet();
         
         // REMOVE IF NOT DEBUGGING
         //viewPort.addProcessor(new WireProcessor(assetManager));
@@ -60,12 +60,28 @@ public class Main extends SimpleApplication implements ArtNetListener {
 
     @Override
     public void simpleUpdate(float tpf) {
-        //TODO: add update code
+        for (Fixture f : fixtures) {
+            f.controlUpdate(tpf);
+        }
     }
 
     @Override
     public void simpleRender(RenderManager rm) {
         //TODO: add render code
+    }
+    
+    @Override
+    public void stop() {
+        // Shutdown artnet and run super version
+        artnet.disable();
+        super.stop();
+    }
+    
+    @Override
+    public void stop(boolean waitFor) {
+        // Shutdown artnet and run super version
+        artnet.disable();
+        super.stop(waitFor);
     }
     
     protected void setupWindow() {
@@ -101,8 +117,6 @@ public class Main extends SimpleApplication implements ArtNetListener {
         // Science Theatre Fixtures
         ArrayList<Fixture> scienceTheatre = theatre.createFixtures(rootNode, assetManager, viewPort);
         fixtures.addAll(scienceTheatre);
-        
-        
     }
     
     protected void setupCameras() {
@@ -119,18 +133,17 @@ public class Main extends SimpleApplication implements ArtNetListener {
     }
     
     protected void setupArtNet() {
-        try {
-            artnet = new ArtNet();
-            artnet.enable();
-            artnet.run();
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-            System.exit(0);
-        }
+        artnet = new ArtNet();
+        artnet.enable();
+        artnet.addListener(this);
+        
+        // Start artnet thread
+        artnet.start();
     }
     
     public void receive_artnet(DMXPacket dmx) {
-        for(Fixture fixture : fixtures) {
+        for (Fixture fixture : fixtures) {
+            //System.out.println("Fixture: " + fixture.getName());
             fixture.dmx_signal(dmx);
         }
     }

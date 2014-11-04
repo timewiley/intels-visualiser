@@ -6,6 +6,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
+import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 
@@ -13,11 +14,12 @@ import java.util.ArrayList;
  * Listen to packets over the ArtNet protocol and generate DMX packets
  * @author Tim
  */
-public class ArtNet {
+public class ArtNet extends Thread {
 
     public static final String DEFAULT_ADDRESS  = "127.0.0.1";
     public static final int    DEFAULT_PORT     = 6454;
     public static final int    BUFFER_SIZE      = 1024;
+    private static final int   SOCKET_TIMEOUT   = (int) 1.0 * 1000;
     
     // Connection details
     private String address;
@@ -37,6 +39,7 @@ public class ArtNet {
         address = DEFAULT_ADDRESS;
         port = DEFAULT_PORT;
         operating = false;
+        listeners = new ArrayList<ArtNetListener>();
     }
     
     /**
@@ -86,41 +89,59 @@ public class ArtNet {
      * Run the server in the current thread. Method does not return
      * until the server is disabled
      */
-    public void run() throws IOException {
+    @Override
+    public void run() {
         // Create a new socket on the address/port combination
-        InetAddress iAddress = InetAddress.getByName(address);
-        DatagramSocket socket = new DatagramSocket(port, iAddress);
+        InetAddress iAddress;
+        DatagramSocket socket;
+        try {
+            iAddress = InetAddress.getByName(address);
+            socket = new DatagramSocket(port, iAddress);
+            socket.setSoTimeout(SOCKET_TIMEOUT);
+            
+            System.out.println("ArtNet listening on " + address + ":" + port);
+        } catch (IOException e) {
+            System.out.println(e);
+            return;
+        }    
         
         // Parse buffer
         byte[] buffer = new byte[BUFFER_SIZE];
-        
+        int timeout = 0;
         
         while (operating) {
             // Recieve next packet
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-            socket.receive(packet);
-            
-            // Parse
-            ArtNetPacket artnetPacket = Parser.parse(packet);
-            if (artnetPacket != null) {
-                // Notify listeners
-                DMXPacket dmx = new DMXPacket(artnetPacket);
-                for (ArtNetListener listener : listeners) {
-                    listener.receive_artnet(dmx);
-                }
+            try {
+                socket.receive(packet);
                 
-                // display response
-                //System.out.println("Recieved Packet Opcode: " + artnetPacket.getOpcode());
-                //System.out.println("Data:" + artnetPacket.getData());
-            } else {
-                //String recieved = new String(packet.getData(), 0, packet.getLength());
-                //System.out.println("Packet parse failed: " + recieved);
-            }
+                // Parse
+                ArtNetPacket artnetPacket = Parser.parse(packet);
+                if (artnetPacket != null) {
+                    // Notify listeners
+                    DMXPacket dmx = new DMXPacket(artnetPacket);
+                    for (ArtNetListener listener : listeners) {
+                        listener.receive_artnet(dmx);
+                    }
 
-            
+                    // display response
+                    //System.out.println("Recieved Packet Opcode: " + artnetPacket.getOpcode());
+                    //System.out.println("Data:" + artnetPacket.getData());
+                } else {
+                    //String recieved = new String(packet.getData(), 0, packet.getLength());
+                    //System.out.println("Packet parse failed: " + packet);
+                }
+            } catch (SocketTimeoutException e) {
+                // It's ok, just wait for the next packet
+                timeout++;
+                System.out.println("Timeout: " + timeout);
+            } catch (IOException e) {
+                // Fail silently
+            }
         }
      
         // Close the connection
+        System.out.println("ArtNet closing");
         socket.close();
     }
     

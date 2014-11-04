@@ -14,7 +14,6 @@ import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
 import com.jme3.scene.shape.Cylinder;
 import com.jme3.scene.shape.Dome;
-import cserevue.intels.dmx.DMXPacket;
 import cserevue.intels.models.Model;
 
 /**
@@ -91,22 +90,22 @@ public class Par64 extends RGBFixture {
         lamp.setSpotRange(30f);
         lamp.setSpotInnerAngle(5f * FastMath.DEG_TO_RAD);
         lamp.setSpotOuterAngle(15f * FastMath.DEG_TO_RAD);
-        lamp.setColor(colour);
+        lamp.setColor(dmxColour);
         lamp.setPosition(position);
         lamp.setDirection(rotation.mult(Vector3f.UNIT_Z));
         rootNode.addLight(lamp);
-        
-        // Overwrite colour with internal lamp colour
-        colour = lamp.getColor();
     }
-    
+
     @Override
-    public void dmx_signal(DMXPacket dmx) {
-        super.dmx_signal(dmx);
-        if (dmx.getUniverse() == universe) {
-            //discMat.setColor("Ambient", colour);
-            //discMat.setColor("Diffuse", colour);
-            discMat.setColor("Color", colour);
+    public void controlUpdate(float tpf) {
+        // Set par colour
+        if (newDMXPacket) {
+            synchronized(this) {
+                //discMat.setColor("Ambient", colour);
+                //discMat.setColor("Diffuse", colour);
+                discMat.setColor("Color", dmxColour);
+                newDMXPacket = false;
+            }
         }
     }
     

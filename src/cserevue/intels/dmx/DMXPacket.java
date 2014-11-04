@@ -50,7 +50,7 @@ public class DMXPacket {
      * @return 
      */
     public byte getValue(int address) {
-        return data[address % DMX_ADDRESSES];
+        return address - 1 < data.length ? data[address - 1] : 0;
     }
     
     /**

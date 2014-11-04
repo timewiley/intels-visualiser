@@ -1,5 +1,6 @@
 package cserevue.intels.fixtures;
 
+import com.jme3.scene.control.AbstractControl;
 import cserevue.intels.dmx.DMXPacket;
 
 /**
@@ -47,4 +48,10 @@ public abstract class Fixture {
      * @param dmx 
      */
     public abstract void dmx_signal(DMXPacket dmx);
+    
+    /**
+     * Update the fixture inside the appropriate render loop
+     * @param tpf 
+     */
+    public abstract void controlUpdate(float tpf);
 }

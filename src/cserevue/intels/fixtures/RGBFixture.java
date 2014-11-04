@@ -13,18 +13,27 @@ import cserevue.intels.dmx.DMXPacket;
  */
 public abstract class RGBFixture extends Fixture {
     
-    protected ColorRGBA colour;
+    // DMX Controls
+    protected ColorRGBA dmxColour;
+    protected boolean newDMXPacket;
     
     public RGBFixture(String id, int universe, int address) {
         super(id, universe, address);
-        colour = new ColorRGBA(ColorRGBA.Black);
+        dmxColour = new ColorRGBA(ColorRGBA.Black);
+        newDMXPacket = false;
     }
     
     public void dmx_signal(DMXPacket dmx) {
         if (dmx.getUniverse() == universe) {
-            colour.r = dmx.getValueFloat(address);
-            colour.g = dmx.getValueFloat(address + 1);
-            colour.b = dmx.getValueFloat(address + 2);
+            //System.out.println("dmx_signal: " + dmx.getUniverse());
+            synchronized(this) {
+                dmxColour.r = dmx.getValueFloat(address);
+                dmxColour.g = dmx.getValueFloat(address + 1);
+                dmxColour.b = dmx.getValueFloat(address + 2);
+                newDMXPacket = true;
+            }
+        } else {
+            //System.out.println("Incorrect Universe: " + dmx.getUniverse());
         }
     }
 }
