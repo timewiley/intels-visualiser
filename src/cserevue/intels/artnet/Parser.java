@@ -41,7 +41,7 @@ public class Parser {
             int sequence = 0;
             
             // Get Universe
-            int universe = 0;
+            int universe = datagramData[UNIVERSE_OFFSET];
             
             // Get Data
             byte[] data = new byte[0];
